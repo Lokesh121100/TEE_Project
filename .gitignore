@@ -4,7 +4,7 @@
 
 # Python Virtual Environments
 .venv/
-ServiceNow-Scripts-MCP/venv/
+**/venv/
 venv/
 env/
 
@@ -14,13 +14,17 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Temporary scripts and logs
-extract_docx.py
-test_sn_mcp.py
-test_sn_mcp_call.py
-docx_content.txt
-docx_content_fixed.txt
+# Temporary files and logs
 *.log
+deploy_error.txt
+deploy_error_full.txt
+deploy_error_utf8.txt
+hf_demo_test.txt
+hf_demo_test_utf8.txt
+
+# Artifacts/System generated
+.gemini/
+.gradio/
 
 # OS generated files
 .DS_Store

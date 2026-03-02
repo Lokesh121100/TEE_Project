@@ -1,3 +1,0 @@
-﻿Deploying AI Auto-Assignment Business Rule to https://dev273008.service-now.com...
-Failed to deploy Business Rule: 401
-  Response: {"error":{"message":"User is not authenticated","detail":"Required to provide Auth information"},"status":"failure"}
