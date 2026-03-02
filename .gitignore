@@ -1,0 +1,27 @@
+# Environment Variables (SENSITIVE)
+.env
+**/.env
+
+# Python Virtual Environments
+.venv/
+ServiceNow-Scripts-MCP/venv/
+venv/
+env/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary scripts and logs
+extract_docx.py
+test_sn_mcp.py
+test_sn_mcp_call.py
+docx_content.txt
+docx_content_fixed.txt
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

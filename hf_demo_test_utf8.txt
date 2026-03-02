@@ -1,0 +1,35 @@
+﻿c:\Users\lokes\Docume
+nts\TEE_Project\.venv
+\Scripts\python : 
+Traceback (most 
+recent call last):
+At line:1 char:1
++ c:\Users\lokes\Docu
+ments\TEE_Project\.ve
+nv\Scripts\python 
+c:\Users\lo ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Traceba   
+ ck (most recent     
+call last)::Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+  File "c:\Users\loke
+s\Documents\TEE_Proje
+ct\hf_demo.py", line 
+1, in <module>
+    from 
+transformers import 
+pipeline
+ModuleNotFoundError: 
+No module named 
+'transformers'
