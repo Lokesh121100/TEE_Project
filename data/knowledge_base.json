@@ -1,0 +1,121 @@
+[
+    {
+        "id": "KB001",
+        "title": "VPN Connection Troubleshooting",
+        "keywords": [
+            "vpn",
+            "connect",
+            "remote",
+            "network"
+        ],
+        "steps": "1. Verify internet connection. 2. Restart GlobalProtect/Cisco AnyConnect client. 3. Flush DNS (ipconfig /flushdns). 4. Re-authenticate via MFA."
+    },
+    {
+        "id": "KB002",
+        "title": "Password Reset Guide",
+        "keywords": [
+            "password",
+            "lock",
+            "reset",
+            "access",
+            "login"
+        ],
+        "steps": "1. Navigate to Self-Service Password Portal. 2. Verify identity via registered Phone/Email. 3. Create new complex password. 4. Wait 5 minutes for sync."
+    },
+    {
+        "id": "KB003",
+        "title": "Hardware Performance Optimization",
+        "keywords": [
+            "slow",
+            "performance",
+            "laptop",
+            "ram",
+            "cpu"
+        ],
+        "steps": "1. Check Task Manager for high CPU/RAM usage. 2. Clear Temp files. 3. Disable unnecessary startup items. 4. Check for pending Windows Updates."
+    },
+    {
+        "id": "KB004",
+        "title": "Outlook Plugin/Attach Issues",
+        "keywords": [
+            "outlook",
+            "crash",
+            "email",
+            "attach",
+            "pdf"
+        ],
+        "steps": "1. Open Outlook in Safe Mode. 2. Disable faulty add-ins. 3. Repair Office via Control Panel. 4. Reset Outlook profile if persists."
+    },
+    {
+        "id": "KB005",
+        "title": "VDI Session Management",
+        "keywords": [
+            "vdi",
+            "session",
+            "timeout",
+            "disconnect",
+            "virtual"
+        ],
+        "steps": "1. Check local WiFi stability. 2. Log off (do not just disconnect) and re-login. 3. Clear Horizon/Citrix cache. 4. Contact IT for server-side reset."
+    },
+    {
+        "id": "KB006",
+        "title": "Software Request Process",
+        "keywords": [
+            "install",
+            "software",
+            "adobe",
+            "request",
+            "acrobat"
+        ],
+        "steps": "1. Check Company Portal/Software Center first. 2. Obtain Manager Approval. 3. Submit license request. 4. Follow auto-install link sent via email."
+    },
+    {
+        "id": "KB007",
+        "title": "Printer Error 50.1 Handling",
+        "keywords": [
+            "printer",
+            "50.1",
+            "fuser",
+            "offline",
+            "jam"
+        ],
+        "steps": "1. Turn printer off and on. 2. Open back cover and verify fuser temperature. 3. Ensure no paper is stuck in tray 2. 4. If Error 50.1 stays, replace fuser unit."
+    },
+    {
+        "id": "KB008",
+        "title": "WiFi Visibility Issues",
+        "keywords": [
+            "wifi",
+            "network",
+            "visible",
+            "guest",
+            "hidden"
+        ],
+        "steps": "1. Toggle Airplane Mode on/off. 2. Forget the network and re-add. 3. Update Wireless Driver. 4. Ensure device is within range of Area B AP."
+    },
+    {
+        "id": "KB009",
+        "title": "Hardware Damage (Screen/Battery)",
+        "keywords": [
+            "crack",
+            "screen",
+            "battery",
+            "damaged",
+            "hardware"
+        ],
+        "steps": "1. Backup local data to OneDrive. 2. Visit Tech Bar for physical evaluation. 3. Sign equipment checkout form. 4. Receive loaner device."
+    },
+    {
+        "id": "KB010",
+        "title": "New Joiner Provisioning",
+        "keywords": [
+            "new",
+            "joiner",
+            "onboard",
+            "account",
+            "provision"
+        ],
+        "steps": "1. Trigger HR system sync. 2. Generate AD account and Email. 3. Assign default O365 licenses. 4. Schedule equipment deployment for Monday."
+    }
+]
