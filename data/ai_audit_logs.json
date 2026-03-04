@@ -1,13 +1,5 @@
 [
   {
-    "timestamp": "2026-03-04 17:26:27",
-    "input": "VPN keeps timing out every 10 minutes",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
     "timestamp": "2026-03-04 17:26:38",
     "input": "My WiFi won't connect on my laptop",
     "response": "Classified as network/specific",
@@ -372,6 +364,14 @@
     "timestamp": "2026-03-04 19:55:02",
     "input": "Outlook keeps crashing.",
     "response": "Title: \"Microsoft Outlook Client Continues Crashing\" | Synthesis: A request has been raised by an end-user to troubleshoot recurring issues with their Outlook application, which continues to crash des",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 19:56:38",
+    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
+    "response": "Title: \"Slow laptop with VPN connectivity\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unidentified user to troubleshoot issues with their laptop's performance and VPN",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"

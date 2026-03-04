@@ -368,48 +368,12 @@ def generate_escalation_response(description, ticket_id="INC0001133"):
 def generate_incident_summary(description, category="N/A", subcategory="N/A", caller="N/A", confidence=0.0):
     """
     Generate a high-quality synthesis summary for ServiceNow.
-
-    BACKWARD-COMPATIBLE RETURN:
-    - When called with only `description` (legacy / test usage):
-      returns a single formatted string  →  "Title | Analysis"
-    - When called with full kwargs (internal pipeline usage):
-      still returns the same single string for consistency.
-      Callers that need the tuple should use generate_incident_summary_tuple().
+    Returns (title, analysis) tuple — both strings.
+    This is the canonical signature expected by run_tests.py.
     """
     title_prompt = f"Summarize this issue into a professional 5-word ServiceNow short description: {description}"
     title = ollama_reasoning(title_prompt) or f"IT Issue: {description[:40]}"
-    
-    synthesis_prompt = (
-        f"INPUT DATA:\n"
-        f"Service Request: {description}\n"
-        f"Category: {category}\n"
-        f"Type: {subcategory}\n"
-        f"Requester: {caller}\n"
-        f"AI Confidence: {confidence}\n\n"
-        "TASK: Create a clear, human-readable synthesis summary. \n"
-        "1. Start with 'A request has been raised by [Requester] to [Meaningful interpretation of Action]'.\n"
-        "2. Follow with a sentence about AI classification, category, and confidence.\n"
-        "3. Do NOT copy the exact input text. Rewrite it meaningfully.\n"
-        "4. Tone: Professional, third-person."
-    )
-    
-    analysis = ollama_reasoning(synthesis_prompt) or f"Synthesis pending for: {description[:80]}"
-    
-    # Governance: Log the decision
-    log_ai_decision(description, f"Title: {title} | Synthesis: {analysis}", 0.92, "Intelligent Synthesis Summary")
-    
-    # Return a single combined string for backward compatibility with tests
-    return f"{title} | {analysis}"
 
-
-def generate_incident_summary_tuple(description, category="N/A", subcategory="N/A", caller="N/A", confidence=0.0):
-    """
-    Same as generate_incident_summary but returns (title, analysis) tuple.
-    Used internally by the pipeline (run_demo_scenarios, portal, main workflow).
-    """
-    title_prompt = f"Summarize this issue into a professional 5-word ServiceNow short description: {description}"
-    title = ollama_reasoning(title_prompt) or f"IT Issue: {description[:40]}"
-    
     synthesis_prompt = (
         f"INPUT DATA:\n"
         f"Service Request: {description}\n"
@@ -423,10 +387,16 @@ def generate_incident_summary_tuple(description, category="N/A", subcategory="N/
         "3. Do NOT copy the exact input text. Rewrite it meaningfully.\n"
         "4. Tone: Professional, third-person."
     )
-    
+
     analysis = ollama_reasoning(synthesis_prompt) or f"Synthesis pending for: {description[:80]}"
     log_ai_decision(description, f"Title: {title} | Synthesis: {analysis}", 0.92, "Intelligent Synthesis Summary")
     return title, analysis
+
+
+def generate_incident_summary_tuple(description, category="N/A", subcategory="N/A", caller="N/A", confidence=0.0):
+    """Alias for generate_incident_summary() — always returns (title, analysis) tuple."""
+    return generate_incident_summary(description, category=category, subcategory=subcategory,
+                                     caller=caller, confidence=confidence)
 
 
 def generate_aria_response(description, scenario_id=None):
