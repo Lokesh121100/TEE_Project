@@ -2,16 +2,15 @@ import sys
 import os
 import time
 
-# Ensure src/ai_agent is in the path
 sys.path.append(os.path.join(os.getcwd(), 'src', 'ai_agent'))
 
 try:
     from main import (
-        scenarios, 
-        generate_incident_summary, 
+        scenarios,
+        generate_incident_summary_tuple,  # Use the tuple-returning version for the demo pipeline
         generate_aria_response,
-        retrieve_knowledge, 
-        run_auto_resolution, 
+        retrieve_knowledge,
+        run_auto_resolution,
         create_servicenow_incident,
         SERVICENOW_URL
     )
@@ -33,37 +32,32 @@ def run_demo():
         print(f"   Message: \"{scenario['description']}\"")
         print(f"   User:    {scenario['caller']}")
         
-        # 1. AI Reasoning (ARIA Response)
         print("\n   [AI ARIA DIALOGUE]")
         print("   ARIA is analyzing and responding...", end=" ", flush=True)
         aria_reply = generate_aria_response(scenario['description'], scenario_id=scenario['id'])
         print(f"DONE\n     ARIA: \"{aria_reply}\"")
         
-        # 2. AI Summarization
         print("\n   [AI SUMMARIZATION]")
         print("   Generating professional ServiceNow summary...", end=" ", flush=True)
-        title, analysis = generate_incident_summary(
-            scenario['description'], 
-            category=scenario['category'], 
-            subcategory=scenario['subcategory'], 
+        title, analysis = generate_incident_summary_tuple(
+            scenario['description'],
+            category=scenario['category'],
+            subcategory=scenario['subcategory'],
             caller=scenario['caller'],
-            confidence=0.92  # Manual demo confidence
+            confidence=0.92
         )
         print(f"DONE\n     Title: \"{title}\"\n     Analysis: \"{analysis}\"")
         
-        # 3. RAG Retrieval
         print("\n   [RAG KNOWLEDGE RETRIEVAL]")
         print("   Searching local 10-article KB...", end=" ", flush=True)
         knowledge = retrieve_knowledge(scenario['description'])
         print("DONE")
         print(f"     Match: {knowledge[:80]}...")
         
-        # 4. Automation Engine
         print("\n   [AUTOMATION ENGINE]")
         auto_fix = run_auto_resolution(scenario['subcategory'], scenario['description'])
         print(f"     Result: {auto_fix['status']} - {auto_fix['notes'][:80]}...")
         
-        # 5. ServiceNow Integration
         print("\n   [SERVICENOW INTEGRATION]")
         print("   Transmitting to ServiceNow API...", end=" ", flush=True)
         success, inc_num = create_servicenow_incident(
@@ -83,7 +77,7 @@ def run_demo():
             print("   FAILED: Check logs.")
 
         print("\n" + "-" * 70)
-        time.sleep(1) # Small pause for readability during live demo
+        time.sleep(1)
 
     print("\n" + "=" * 70)
     print("  DEMO COMPLETED SUCCESSFULLY")

@@ -1,0 +1,55 @@
+
+=================================================================
+  TEE PROJECT — Automated Test Report
+  Generated: 2026-03-04 15:53:17
+  Instance:  https://dev273008.service-now.com
+=================================================================
+
+
+-----------------------------------------------------------------
+Suite: Environment & Bug Checks  ✅
+  Passed: 8  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: ServiceNow API  ✅
+  Passed: 3  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: main.py Core Functions  ❌
+  Passed: 6  |  Failed: 2  |  Skipped: 0
+
+[FAILURES / ERRORS]
+  ✗ test_01_generate_incident_summary_returns_string (__main__.TestMainFunctions.test_01_generate_incident_summary_returns_string): AssertionError: ('"VPN Connection Issue from Home Office"', 'A request has been raised by an anonymous user to troubleshoot a connection issue to the VPN from their home office.\n\nThe AI has classified this request as a network-related problem, pending category assignment, with a confidence level of 0.0, indicating a lack of clear information to determine the root cause.') is not an instance of <class 'str'>
+  ✗ test_02_generate_incident_summary_not_error (__main__.TestMainFunctions.test_02_generate_incident_summary_not_error): AttributeError: 'tuple' object has no attribute 'startswith'
+
+
+-----------------------------------------------------------------
+Suite: AI Classification Accuracy  ❌
+  Passed: 2  |  Failed: 1  |  Skipped: 0
+
+[FAILURES / ERRORS]
+  ✗ test_03_classification_accuracy_gte_60_percent (__main__.TestAIClassification.test_03_classification_accuracy_gte_60_percent): ValueError: too many values to unpack (expected 3)
+
+
+-----------------------------------------------------------------
+Suite: Portal Health  ❌
+  Passed: 3  |  Failed: 2  |  Skipped: 0
+
+[FAILURES / ERRORS]
+  ✗ test_02_process_incident_exists (__main__.TestPortalHealth.test_02_process_incident_exists): AssertionError: False is not true : process_incident() not found in portal.py
+  ✗ test_04_generate_incident_summary_returns_string (__main__.TestPortalHealth.test_04_generate_incident_summary_returns_string): AssertionError: ('"Slow laptop with recurring VPN issues"', 'Here is the synthesis summary:\n\nA request has been raised by an unknown user to troubleshoot a slow-performing laptop with recurring VPN disconnections.\n\nThe AI has initially classified this request as an unknown category, with a confidence level of 0.0, indicating that the AI is not confident in resolving the issue and requires human intervention.') is not an instance of <class 'str'>
+
+
+-----------------------------------------------------------------
+Suite: MCP Server Health  ✅
+  Passed: 2  |  Failed: 0  |  Skipped: 0
+
+
+=================================================================
+  FINAL SUMMARY
+  Total:   29  |  Passed: 24  |  Failed: 5  |  Skipped: 0
+  Result:  5 TEST(S) FAILED ❌
+=================================================================
+  Report saved to: C:\Users\lokes\Documents\TEE_Project\test_report_20260304_155317.txt

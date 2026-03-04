@@ -1,0 +1,44 @@
+
+=================================================================
+  TEE PROJECT — Automated Test Report  (v2 FIXED)
+  Generated: 2026-03-04 19:21:40
+  Instance:  https://dev273008.service-now.com
+=================================================================
+
+
+-----------------------------------------------------------------
+Suite: Environment & Bug Checks  [PASS]
+  Passed: 8  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: ServiceNow API  [PASS]
+  Passed: 3  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: main.py Core Functions  [PASS]
+  Passed: 9  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: AI Classification Accuracy  [PASS]
+  Passed: 3  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: Portal Health  [PASS]
+  Passed: 5  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: MCP Server Health  [PASS]
+  Passed: 2  |  Failed: 0  |  Skipped: 0
+
+
+=================================================================
+  FINAL SUMMARY
+  Total: 30  |  Passed: 30  |  Failed: 0  |  Skipped: 0
+  Result: ALL TESTS PASSED [OK]
+=================================================================
+  Report saved to: C:\Users\lokes\Documents\TEE_Project\test_report_20260304_192140.txt

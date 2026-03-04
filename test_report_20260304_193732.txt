@@ -1,0 +1,52 @@
+
+=================================================================
+  TEE PROJECT — Automated Test Report  (v2 FIXED)
+  Generated: 2026-03-04 19:37:32
+  Instance:  https://dev273008.service-now.com
+=================================================================
+
+
+-----------------------------------------------------------------
+Suite: Environment & Bug Checks  [FAIL]
+  Passed: 7  |  Failed: 1  |  Skipped: 0
+
+[FAILURES / ERRORS]
+  FAIL test_04_poll_servicenow_importable_no_side_effects (__main__.TestEnvironment.test_04_poll_servicenow_importable_no_side_effects):
+      ImportError: cannot import name 'generate_incident_summary_tuple' from 'main' (C:\Users\lokes\Documents\TEE_Project\src\ai_agent\main.py)
+
+
+-----------------------------------------------------------------
+Suite: ServiceNow API  [PASS]
+  Passed: 3  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: main.py Core Functions  [PASS]
+  Passed: 9  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: AI Classification Accuracy  [FAIL]
+  Passed: -1  |  Failed: 1  |  Skipped: 0
+
+[FAILURES / ERRORS]
+  FAIL setUpClass (__main__.TestAIClassification):
+      ImportError: cannot import name 'generate_incident_summary_tuple' from 'main' (C:\Users\lokes\Documents\TEE_Project\src\ai_agent\main.py)
+
+
+-----------------------------------------------------------------
+Suite: Portal Health  [PASS]
+  Passed: 5  |  Failed: 0  |  Skipped: 0
+
+
+-----------------------------------------------------------------
+Suite: MCP Server Health  [PASS]
+  Passed: 2  |  Failed: 0  |  Skipped: 0
+
+
+=================================================================
+  FINAL SUMMARY
+  Total: 27  |  Passed: 25  |  Failed: 2  |  Skipped: 0
+  Result: 2 TEST(S) FAILED [FAIL]
+=================================================================
+  Report saved to: C:\Users\lokes\Documents\TEE_Project\test_report_20260304_193732.txt

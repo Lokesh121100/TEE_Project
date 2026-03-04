@@ -1,390 +1,343 @@
 [
   {
-    "timestamp": "2026-03-04 14:10:49",
-    "input": "Cannot see the 'Corporate_Guest' WiFi network on my mobile device. Other colleagues can connect fine",
-    "response": "I have verified that AP 'Floor3-South' is healthy. The issue appears isolated to your mobile profile. I have notified the Network Operations Team (INC0001051) to investigate your device authentication",
+    "timestamp": "2026-03-04 17:26:27",
+    "input": "VPN keeps timing out every 10 minutes",
+    "response": "Classified as network/VPN",
     "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
+    "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 14:11:21",
-    "input": "Cannot see the 'Corporate_Guest' WiFi network on my mobile device. Other colleagues can connect fine",
-    "response": "Title: \"Corporate_Guest WiFi unavailable on mobile\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by grace.wifi@company.com to investigate and resolve the issue of being unabl",
+    "timestamp": "2026-03-04 17:26:38",
+    "input": "My WiFi won't connect on my laptop",
+    "response": "Classified as network/specific",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:27:08",
+    "input": "Can't see the Corporate_Guest WiFi network",
+    "response": "Classified as network/connectivity",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:27:20",
+    "input": "My password expired and I'm locked out",
+    "response": "Classified as access/Password",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:27:31",
+    "input": "Account locked after too many login attempts",
+    "response": "Classified as access/Password",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:27:44",
+    "input": "Need access for new joiner starting Monday",
+    "response": "Classified as onboarding/new joiner",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:27:55",
+    "input": "Please reset my MFA authenticator app",
+    "response": "Classified as access/MFA",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:28:25",
+    "input": "Laptop is extremely slow and freezing",
+    "response": "Classified as hardware/specific",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:28:37",
+    "input": "Screen is cracked and battery drains in 20 minutes",
+    "response": "Classified as hardware/device",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:28:50",
+    "input": "Printer shows Error 50.1 after clearing paper jam",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:29:04",
+    "input": "Need a device replacement \u2014 current one is broken",
+    "response": "Classified as hardware/device",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:29:31",
+    "input": "Outlook crashes when I attach a PDF",
+    "response": "Classified as software/specific",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:29:50",
+    "input": "Adobe Acrobat Pro installation needed urgently",
+    "response": "Classified as software/installation",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:30:04",
+    "input": "VDI session disconnects every 10 minutes",
+    "response": "Classified as software/VDI",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:30:26",
+    "input": "Microsoft Teams keeps freezing during calls",
+    "response": "Classified as software/specific",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:31:03",
+    "input": "Excel file won't open, says it's corrupt",
+    "response": "Classified as software/application",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:31:15",
+    "input": "Unable to log into SAP system",
+    "response": "Classified as access/password",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:31:28",
+    "input": "Need SharePoint access for the new project",
+    "response": "Classified as access/other",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 17:31:53",
+    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
+    "response": "Title: \"Slow Laptop with Recurring VPN Issues\" | Synthesis: A request has been raised by an end-user to troubleshoot their laptop's performance issues and intermittent VPN disconnections.\n\nThe AI syst",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 14:11:23",
-    "input": "I was at a party last night and accidentally poured my drink over my laptop. Now it won't turn on an",
-    "response": "I understand this is urgent with your presentation tomorrow. I have raised a critical replacement request \u00e2\u20ac\u201d ticket INC0001102. A replacement laptop has been assigned to Smart Locker 7B at the Main T",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:40:34.028717",
+    "type": "Classification",
+    "description": "I can't connect to the VPN from home",
+    "decision": "Classified as network/VPN",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:11:59",
-    "input": "I was at a party last night and accidentally poured my drink over my laptop. Now it won't turn on an",
-    "response": "Title: \"Water damage, laptop won't power.\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by Henry HW to request a replacement for his laptop, which has been damaged beyond rep",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:40:54.342382",
+    "type": "Classification",
+    "description": "VPN keeps timing out every 10 minutes",
+    "decision": "Classified as network/VPN",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:12:02",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Welcome to the organisation! I have raised your onboarding request as ticket INC0001118 with high priority given your Monday start. Your laptop and access kit will be available from Smart Locker 3C at",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:41:24.131217",
+    "type": "Classification",
+    "description": "My WiFi won't connect on my laptop",
+    "decision": "Classified as network/WiFi",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:12:32",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Title: \"New Employee Onboarding and Provisioning\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by HR Administration to provision a new employee's system access and arrange fo",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:41:54.415904",
+    "type": "Classification",
+    "description": "Can't see the Corporate_Guest WiFi network",
+    "decision": "Classified as network/specific",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:31:24",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "I have found our password reset guide. You can reset your password by going to https://reset.company.com and clicking Forgot Password. If your account is locked rather than expired, I have raised tick",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:42:08.871149",
+    "type": "Classification",
+    "description": "My password expired and I'm locked out",
+    "decision": "Classified as access/Password",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:32:34",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "Title: \"Login issue: password expired or locked.\" | Synthesis: A request has been raised by john.reset@company.com to resolve an access issue with their computer login.\n\nThe AI has classified this req",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:42:40.493377",
+    "type": "Classification",
+    "description": "Account locked after too many login attempts",
+    "decision": "Classified as access/Password",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:32:37",
-    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
-    "response": "I can see your device health score is 61 out of 100, which may be contributing to your VPN instability. Please try these steps: 1) Restart the VPN client completely. 2) Clear your DNS cache by running",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:45:40.814671",
+    "type": "Classification",
+    "description": "Need a device replacement \u2014 current one is broken",
+    "decision": "Classified as hardware/device",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:33:11",
-    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
-    "response": "Title: \"VPN connectivity issues at home\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by Alice to resolve persistent VPN disconnections while working from home.\n\nAI classific",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:46:11.454909",
+    "type": "Classification",
+    "description": "Outlook crashes when I attach a PDF",
+    "decision": "Classified as software/specific",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:33:14",
-    "input": "My laptop is running extremely slow today. It takes 10 minutes just to boot up and open Excel. I'm w",
-    "response": "Your DEX health score was 4.2/10 (Critical). ARIA has cleared your system cache and restarted the SysMain service. Your performance score is now 8.9/10. I have also scheduled an automatic tune-up for ",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:47:14.052416",
+    "type": "Classification",
+    "description": "VDI session disconnects every 10 minutes",
+    "decision": "Classified as software/VDI (Virtual Desktop Infrastructure)",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:33:41",
-    "input": "My laptop is running extremely slow today. It takes 10 minutes just to boot up and open Excel. I'm w",
-    "response": "Title: \"Laptop slow boot and Excel issue\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by bob.performance@company.com to investigate the slow performance of their laptop, whi",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:48:18.049332",
+    "type": "Classification",
+    "description": "Excel file won't open, says it's corrupt",
+    "decision": "Classified as software/application",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:33:44",
-    "input": "Outlook keeps crashing whenever I try to attach a PDF document. Blocking my ability to send reports.",
-    "response": "Outlook crashing is often due to faulty add-ins. I suggest opening Outlook in Safe Mode temporarily. I have created ticket INC0001048 for the Software Support team to perform a remote repair of your O",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T17:49:05.644962",
+    "type": "Classification",
+    "description": "Need SharePoint access for the new project",
+    "decision": "Classified as access/software",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:34:09",
-    "input": "Outlook keeps crashing whenever I try to attach a PDF document. Blocking my ability to send reports.",
-    "response": "Title: \"Outlook crashes with PDF attachment\" | Synthesis: A request has been raised by Charlie Outlook to resolve the issue of Outlook crashing when attempting to attach PDF documents, thereby hinderi",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:11:09.398355",
+    "type": "Classification",
+    "description": "My WiFi won't connect on my laptop",
+    "decision": "Classified as network/WiFi",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:34:12",
-    "input": "VDI session disconnects every 10 minutes. Getting a 'Session Timed Out' error repeatedly.",
-    "response": "I detected a dead VDI agent on your host server. I have routed your request to the Virtualization L2 team (INC0001049) who will investigate the host maintenance requirements immediately.",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:14:17.089406",
+    "type": "Classification",
+    "description": "Laptop is extremely slow and freezing",
+    "decision": "Classified as hardware/laptop",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:34:39",
-    "input": "VDI session disconnects every 10 minutes. Getting a 'Session Timed Out' error repeatedly.",
-    "response": "Title: \"VDI Session Disconnects Every 10 Minutes\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by David VDI to troubleshoot and resolve recurring disconnections from VDI sess",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:15:37.216450",
+    "type": "Classification",
+    "description": "Need a device replacement \u2014 current one is broken",
+    "decision": "Classified as hardware/device replacement",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:34:42",
-    "input": "Need Adobe Acrobat Pro installed for a new project starting tomorrow. Manager has already approved.",
-    "response": "Your Adobe Acrobat Pro request has been verified against your AD entitlements (Approved). ServiceNow Request RITM10023 has been created. You will receive an install link once the license is assigned.",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:18:40.216248",
+    "type": "Classification",
+    "description": "Unable to log into SAP system",
+    "decision": "Classified as software/access",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:35:06",
-    "input": "Need Adobe Acrobat Pro installed for a new project starting tomorrow. Manager has already approved.",
-    "response": "Title: \"Install Adobe Acrobat Pro software\" | Synthesis: A request has been raised by Emma Soft to install Adobe Acrobat Pro for a new project, which has already been approved by her manager, to ensur",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:19:03.380717",
+    "type": "Classification",
+    "description": "Need SharePoint access for the new project",
+    "decision": "Classified as software/access",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:35:09",
-    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
-    "response": "KB article KB007 suggests Error 50.1 is a fuser overheat. I have escalated this to Deskside Support (INC0001050) for a physical part replacement on Floor 3, Area B.",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:23:38.253513",
+    "type": "Classification",
+    "description": "I can't connect to the VPN from home",
+    "decision": "Classified as network/VPN",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:35:37",
-    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
-    "response": "Title: \"Printer offline, Error 50.1 persists.\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by Frank Print to resolve the issue with a printer on Floor 3, Area B, which is cu",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:26:40.687353",
+    "type": "Classification",
+    "description": "Need access for new joiner starting Monday",
+    "decision": "Classified as onboarding/access",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:35:39",
-    "input": "Cannot see the 'Corporate_Guest' WiFi network on my mobile device. Other colleagues can connect fine",
-    "response": "I have verified that AP 'Floor3-South' is healthy. The issue appears isolated to your mobile profile. I have notified the Network Operations Team (INC0001051) to investigate your device authentication",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:28:41.083961",
+    "type": "Classification",
+    "description": "Printer shows Error 50.1 after clearing paper jam",
+    "decision": "Classified as hardware/Printer",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:36:05",
-    "input": "Cannot see the 'Corporate_Guest' WiFi network on my mobile device. Other colleagues can connect fine",
-    "response": "Title: \"Corporate_Guest WiFi not visible on mobile\" | Synthesis: A request has been raised by Grace to troubleshoot the inability to see the 'Corporate_Guest' WiFi network on her mobile device, despit",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:29:07.466471",
+    "type": "Classification",
+    "description": "Need a device replacement \u2014 current one is broken",
+    "decision": "Classified as hardware/device",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:36:07",
-    "input": "I was at a party last night and accidentally poured my drink over my laptop. Now it won't turn on an",
-    "response": "I understand this is urgent with your presentation tomorrow. I have raised a critical replacement request \u00e2\u20ac\u201d ticket INC0001102. A replacement laptop has been assigned to Smart Locker 7B at the Main T",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:30:38.008850",
+    "type": "Classification",
+    "description": "VDI session disconnects every 10 minutes",
+    "decision": "Classified as software/VDI (Virtual Desktop Infrastructure)",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:36:38",
-    "input": "I was at a party last night and accidentally poured my drink over my laptop. Now it won't turn on an",
-    "response": "Title: \"Laptop water damage, urgent repair needed\" | Synthesis: Here is a clear, human-readable synthesis summary:\n\nA request has been raised by Henry HW to request a replacement for a damaged laptop.",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:32:03.666859",
+    "type": "Classification",
+    "description": "Unable to log into SAP system",
+    "decision": "Classified as access/Password",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:36:41",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Welcome to the organisation! I have raised your onboarding request as ticket INC0001118 with high priority given your Monday start. Your laptop and access kit will be available from Smart Locker 3C at",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
+    "timestamp": "2026-03-04T19:32:21.939923",
+    "type": "Classification",
+    "description": "Need SharePoint access for the new project",
+    "decision": "Classified as software/access",
+    "confidence": 0.95
   },
   {
-    "timestamp": "2026-03-04 14:37:07",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Title: \"New Employee Onboarding IT Provisioning Needed\" | Synthesis: A request has been raised by HR Administration to provision system access and arrange for hardware delivery for a new employee join",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:46:54",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "I have found our password reset guide. You can reset your password by going to https://reset.company.com and clicking Forgot Password. If your account is locked rather than expired, I have raised tick",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:48:02",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "Title: \"User unable to log in\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by John Reset to resolve an issue with logging in to their computer, suspecting that their passwor",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:48:05",
-    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
-    "response": "I can see your device health score is 61 out of 100, which may be contributing to your VPN instability. Please try these steps: 1) Restart the VPN client completely. 2) Clear your DNS cache by running",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:48:33",
-    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
-    "response": "Title: \"VPN Disconnection Issues at Home\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by Alice to troubleshoot recurring VPN disconnections, which is hindering her remote wo",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:48:35",
-    "input": "My laptop is running extremely slow today. It takes 10 minutes just to boot up and open Excel. I'm w",
-    "response": "Your DEX health score was 4.2/10 (Critical). ARIA has cleared your system cache and restarted the SysMain service. Your performance score is now 8.9/10. I have also scheduled an automatic tune-up for ",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:48:59",
-    "input": "My laptop is running extremely slow today. It takes 10 minutes just to boot up and open Excel. I'm w",
-    "response": "Title: \"Laptop Slow Booting and Performance Issue\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by bob.performance@company.com to investigate and address the slow performance",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:49:01",
-    "input": "Outlook keeps crashing whenever I try to attach a PDF document. Blocking my ability to send reports.",
-    "response": "Outlook crashing is often due to faulty add-ins. I suggest opening Outlook in Safe Mode temporarily. I have created ticket INC0001048 for the Software Support team to perform a remote repair of your O",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:49:26",
-    "input": "Outlook keeps crashing whenever I try to attach a PDF document. Blocking my ability to send reports.",
-    "response": "Title: \"Outlook crashes when attaching PDF\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by Charlie Outlook to troubleshoot recurring issues with attaching PDF documents in O",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:49:28",
-    "input": "VDI session disconnects every 10 minutes. Getting a 'Session Timed Out' error repeatedly.",
-    "response": "I detected a dead VDI agent on your host server. I have routed your request to the Virtualization L2 team (INC0001049) who will investigate the host maintenance requirements immediately.",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:49:59",
-    "input": "VDI session disconnects every 10 minutes. Getting a 'Session Timed Out' error repeatedly.",
-    "response": "Title: \"VDI Session Disconnects Repeatedly After 10\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by David VDI to resolve the recurring disconnection issue with his Virtual D",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:50:01",
-    "input": "Need Adobe Acrobat Pro installed for a new project starting tomorrow. Manager has already approved.",
-    "response": "Your Adobe Acrobat Pro request has been verified against your AD entitlements (Approved). ServiceNow Request RITM10023 has been created. You will receive an install link once the license is assigned.",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:50:26",
-    "input": "Need Adobe Acrobat Pro installed for a new project starting tomorrow. Manager has already approved.",
-    "response": "Title: \"Adobe Acrobat Pro Installation Requested Urgently\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by Emma to install Adobe Acrobat Pro software in order to commence a n",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:50:28",
-    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
-    "response": "KB article KB007 suggests Error 50.1 is a fuser overheat. I have escalated this to Deskside Support (INC0001050) for a physical part replacement on Floor 3, Area B.",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:50:54",
-    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
-    "response": "Title: \"Printer offline, Error 50.1 persists.\" | Synthesis: A request has been raised by frank.print@company.com to resolve an issue with a printer on Floor 3, Area B, which has been reported as offli",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:50:56",
-    "input": "Cannot see the 'Corporate_Guest' WiFi network on my mobile device. Other colleagues can connect fine",
-    "response": "I have verified that AP 'Floor3-South' is healthy. The issue appears isolated to your mobile profile. I have notified the Network Operations Team (INC0001051) to investigate your device authentication",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:51:22",
-    "input": "Cannot see the 'Corporate_Guest' WiFi network on my mobile device. Other colleagues can connect fine",
-    "response": "Title: \"Mobile Guest WiFi Network Unavailable Issue\" | Synthesis: A request has been raised by grace.wifi@company.com to troubleshoot a WiFi connectivity issue on their mobile device, where the 'Corpo",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:51:24",
-    "input": "I was at a party last night and accidentally poured my drink over my laptop. Now it won't turn on an",
-    "response": "I understand this is urgent with your presentation tomorrow. I have raised a critical replacement request \u00e2\u20ac\u201d ticket INC0001102. A replacement laptop has been assigned to Smart Locker 7B at the Main T",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:51:48",
-    "input": "I was at a party last night and accidentally poured my drink over my laptop. Now it won't turn on an",
-    "response": "Title: \"Water damage on laptop, urgent fix needed.\" | Synthesis: A request has been raised by Henry to obtain a replacement for his laptop, which has been damaged and will not turn on.\n\nThe AI has cla",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:51:50",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Welcome to the organisation! I have raised your onboarding request as ticket INC0001118 with high priority given your Monday start. Your laptop and access kit will be available from Smart Locker 3C at",
-    "confidence": 0.95,
-    "tool": "ARIA Dialogue (RAG Synthesis)",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 14:52:16",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Title: \"New Employee Onboarding: Access and Hardware\" | Synthesis: A request has been raised by the HR Administration to provision a new employee's system access and arrange for hardware delivery as s",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 15:10:26",
+    "timestamp": "2026-03-04 19:43:00",
     "input": "User cannot connect to VPN from home office.",
-    "response": "Title: \"VPN Connection Issue from Home Office\" | Synthesis: A request has been raised by a user to resolve an issue with connecting to the VPN from their home office.\n\nThe AI has classified this reque",
+    "response": "Title: \"VPN Connection Issue from Home Office\" | Synthesis: A request has been raised by an unidentified user to resolve a connectivity issue preventing them from accessing the VPN from their home off",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 15:10:49",
+    "timestamp": "2026-03-04 19:43:28",
     "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook Application Crashes Frequently\" | Synthesis: Here is the synthesized summary:\n\nA request has been raised by an end-user to troubleshoot Outlook issues with frequent crashing.",
+    "response": "Title: \"Microsoft Outlook repeatedly experiences crashes\" | Synthesis: Here is the synthesized summary:\n\nA request has been raised by an end-user to troubleshoot persistent issues with their Outlook a",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 15:11:40",
+    "timestamp": "2026-03-04 19:43:56",
+    "input": "Outlook keeps crashing.",
+    "response": "Title: \"Outlook application crashes repeatedly on PC.\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an end-user to resolve an issue with their Microsoft Outlook applicatio",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 19:44:59",
     "input": "I can't connect to the VPN from home",
     "response": "Classified as network/VPN",
     "confidence": 0.95,
@@ -392,9 +345,33 @@
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 15:12:03",
+    "timestamp": "2026-03-04 19:45:35",
     "input": "My laptop is running very slowly and the VPN keeps disconnecting",
-    "response": "Title: \"Laptop slow, VPN connection issues\" | Synthesis: A request has been raised by an unidentified user to report performance issues with their laptop and intermittent VPN disconnections.\n\nThe AI s",
+    "response": "Title: \"Laptop Performance Issues, VPN Disconnections\" | Synthesis: A request has been raised by an unnamed user to troubleshoot and resolve issues with a slow laptop and recurring VPN disconnections.",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 19:53:42",
+    "input": "User cannot connect to VPN from home office.",
+    "response": "Title: IT Issue: User cannot connect to VPN from home off | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unidentified user to troubleshoot a connectivity issue with the V",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 19:54:20",
+    "input": "Outlook keeps crashing.",
+    "response": "Title: \"Microsoft Outlook Crashing on User's PC\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unknown user to troubleshoot persistent issues with Microsoft Outlook, whi",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 19:55:02",
+    "input": "Outlook keeps crashing.",
+    "response": "Title: \"Microsoft Outlook Client Continues Crashing\" | Synthesis: A request has been raised by an end-user to troubleshoot recurring issues with their Outlook application, which continues to crash des",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"
