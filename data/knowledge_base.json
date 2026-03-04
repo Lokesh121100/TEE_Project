@@ -8,7 +8,7 @@
             "remote",
             "network"
         ],
-        "steps": "1. Verify internet connection. 2. Restart GlobalProtect/Cisco AnyConnect client. 3. Flush DNS (ipconfig /flushdns). 4. Re-authenticate via MFA."
+        "steps": "1. Restart the VPN client completely. 2. Clear your DNS cache by running 'ipconfig /flushdns'. 3. Reconnect on a 5GHz WiFi band if available. If device health is below 70, flag for a proactive DEX health check."
     },
     {
         "id": "KB002",
@@ -20,7 +20,7 @@
             "access",
             "login"
         ],
-        "steps": "1. Navigate to Self-Service Password Portal. 2. Verify identity via registered Phone/Email. 3. Create new complex password. 4. Wait 5 minutes for sync."
+        "steps": "1. Navigate to the Self-Service Password Portal (https://reset.company.com). 2. Click 'Forgot Password'. 3. Verify identity via registered Phone/Email. 4. Wait 5 minutes for sync. If the account is locked, an incident will be automatically created for the Access Team."
     },
     {
         "id": "KB003",
@@ -104,7 +104,7 @@
             "damaged",
             "hardware"
         ],
-        "steps": "1. Backup local data to OneDrive. 2. Visit Tech Bar for physical evaluation. 3. Sign equipment checkout form. 4. Receive loaner device."
+        "steps": "1. Backup local data to OneDrive. 2. A critical replacement ticket will be raised. 3. Collect new device from Assigned Smart Locker using provide PIN. 4. Drop damaged device in the indicated Return Locker."
     },
     {
         "id": "KB010",
@@ -116,6 +116,6 @@
             "account",
             "provision"
         ],
-        "steps": "1. Trigger HR system sync. 2. Generate AD account and Email. 3. Assign default O365 licenses. 4. Schedule equipment deployment for Monday."
+        "steps": "1. Collect device from Smart Locker using provided PIN. 2. Log in with temporary password from welcome email. 3. Connect to Onboarding WiFi. 4. Complete Mandatory Training. If help is needed, contact IT buddy at extension 4400 or visit the Tech Bar."
     }
 ]
