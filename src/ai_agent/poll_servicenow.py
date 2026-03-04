@@ -8,6 +8,7 @@ from main import (
     generate_incident_summary_tuple,
     retrieve_knowledge,
     run_auto_resolution,
+    is_escalation_needed,
     SERVICENOW_URL,
     SERVICENOW_USER,
     SERVICENOW_PASS,
@@ -103,7 +104,7 @@ Category must be one of: access, software, hardware, network, onboarding, other
                 log_ai_decision(description, f"Classified as {cat}/{sub}", conf, "Classification")
                 return cat, sub, grp, conf
 
-    except Exception as e:
+    except Exception:
         pass  # Fall through to keyword fallback
 
     # ── Keyword fallback ──────────────────────────────────────────
@@ -121,6 +122,7 @@ def classify_ticket(description):
       - Forced escalation on critical trigger phrases
       - Low-confidence (<0.70) results routed to L2 Senior Support
     """
+    # is_escalation_needed imported at module level — always available
     escalate, reason = is_escalation_needed(description)
     if escalate:
         print(f"    ⚠️ [GOVERNANCE] Forced Escalation: {reason}")
@@ -133,26 +135,15 @@ def classify_ticket(description):
         return cat, sub, "L2 Senior Support", conf
 
     return cat, sub, grp, conf
+
 
 def classify_ticket_full(description):
     """
     Full classification returning (category, subcategory, group, confidence).
     Used internally by portal and polling loop.
+    Identical to classify_ticket — kept as alias for portal.py compatibility.
     """
-    from main import is_escalation_needed
-
-    escalate, reason = is_escalation_needed(description)
-    if escalate:
-        print(f"    ⚠️ [GOVERNANCE] Forced Escalation: {reason}")
-        return "other", "Escalation", "L2 Senior Support", 0.0
-
-    cat, sub, grp, conf = intelligent_classification(description)
-
-    if conf < 0.70:
-        print(f"    ⚠️ [GOVERNANCE] Low confidence ({conf:.2f}). Escalating to Human L2.")
-        return cat, sub, "L2 Senior Support", conf
-
-    return cat, sub, grp, conf
+    return classify_ticket(description)
 
 
 def poll_for_new_tickets():
