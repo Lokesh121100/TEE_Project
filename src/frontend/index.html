@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA - AI Service Desk | TEE Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">A</div>
+            <span class="brand-text">ARIA</span>
+            <span class="brand-version">v2.0</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-section="desk">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Service Desk
+            </a>
+            <a href="#" class="nav-item" data-section="analytics">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                Analytics
+            </a>
+            <a href="#" class="nav-item" data-section="governance">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Governance
+            </a>
+        </nav>
+
+        <!-- System Health in Sidebar -->
+        <div class="sidebar-health">
+            <div class="health-title">System Status</div>
+            <div class="health-row">
+                <span class="health-dot" id="dot-ollama"></span>
+                <span>Ollama</span>
+                <span class="health-val" id="health-ollama">...</span>
+            </div>
+            <div class="health-row">
+                <span class="health-dot" id="dot-model"></span>
+                <span>Llama3</span>
+                <span class="health-val" id="health-model">...</span>
+            </div>
+            <div class="health-row">
+                <span class="health-dot" id="dot-snow"></span>
+                <span>ServiceNow</span>
+                <span class="health-val" id="health-snow">...</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">AI Service Desk</h1>
+                <span class="page-desc">Automated Resolution & Intelligence Agent</span>
+            </div>
+            <div class="topbar-right">
+                <div class="live-badge">
+                    <span class="live-dot"></span>
+                    Live
+                </div>
+            </div>
+        </header>
+
+        <!-- Metrics Strip -->
+        <div class="metrics-strip" id="metrics-strip">
+            <div class="metric-card">
+                <div class="metric-icon blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="metric-info">
+                    <span class="metric-value" id="metric-mttr">--</span>
+                    <span class="metric-label">MTTR Reduction</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="metric-info">
+                    <span class="metric-value" id="metric-accuracy">--</span>
+                    <span class="metric-label">Classification Accuracy</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <div class="metric-info">
+                    <span class="metric-value" id="metric-satisfaction">--</span>
+                    <span class="metric-label">User Satisfaction</span>
+                </div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon orange">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <div class="metric-info">
+                    <span class="metric-value" id="metric-total">--</span>
+                    <span class="metric-label">Tickets Processed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+
+        <!-- SECTION: Service Desk -->
+        <section class="content-section active" id="section-desk">
+            <div class="desk-grid">
+
+                <!-- Left: Input Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        <span>New Incident</span>
+                    </div>
+                    <form id="incident-form">
+                        <label class="input-label" for="description">Describe your IT issue</label>
+                        <textarea id="description" name="description"
+                            placeholder="e.g., My VPN keeps disconnecting every few minutes while working from home..."
+                            rows="5" required></textarea>
+
+                        <!-- Quick Scenario Buttons -->
+                        <div class="quick-scenarios">
+                            <span class="quick-label">Quick scenarios:</span>
+                            <button type="button" class="scenario-chip" data-text="I forgot my password and cannot login to my computer">Password Reset</button>
+                            <button type="button" class="scenario-chip" data-text="My VPN keeps disconnecting every few minutes while working from home">VPN Issue</button>
+                            <button type="button" class="scenario-chip" data-text="My laptop is running extremely slow and takes 10 minutes to boot">Slow Laptop</button>
+                            <button type="button" class="scenario-chip" data-text="Outlook crashes when I try to attach a PDF document">Outlook Error</button>
+                            <button type="button" class="scenario-chip" data-text="VDI session disconnects every 10 minutes with Session Timed Out error">VDI Failure</button>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" id="clear-btn" class="btn-ghost">Clear</button>
+                            <button type="submit" id="submit-btn" class="btn-primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+                                Process Incident
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: AI Agent Panel -->
+                <div class="panel agent-panel">
+                    <div class="panel-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        <span>AI Agent Workspace</span>
+                    </div>
+
+                    <!-- AI Reasoning Log -->
+                    <div class="reasoning-log" id="reasoning-log">
+                        <div class="reasoning-empty">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <p>Submit an incident to see ARIA's reasoning process in real-time</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Status Bar -->
+                    <div class="agent-status" id="agent-status">
+                        <div class="status-indicator idle"></div>
+                        <span id="ai-status">Ready</span>
+                    </div>
+
+                    <!-- Loading bar -->
+                    <div class="progress-bar" id="progress-bar" style="display:none">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <!-- Hidden spinner for compatibility -->
+                    <div id="loading-spinner" style="display: none;"></div>
+
+                    <!-- Result -->
+                    <div id="result-container" class="result-container" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Analytics -->
+        <section class="content-section" id="section-analytics">
+            <div class="analytics-grid">
+                <div class="panel full-width">
+                    <div class="panel-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        <span>3-Year Strategic Roadmap</span>
+                    </div>
+                    <div class="roadmap-cards">
+                        <div class="roadmap-card year1">
+                            <div class="roadmap-year">Year 1</div>
+                            <div class="roadmap-phase">AI-Assist</div>
+                            <div class="roadmap-metric">22%</div>
+                            <div class="roadmap-label">Deflection Rate</div>
+                            <p class="roadmap-desc">AI-led summarization, intelligent routing, and RAG knowledge injection.</p>
+                        </div>
+                        <div class="roadmap-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </div>
+                        <div class="roadmap-card year2">
+                            <div class="roadmap-year">Year 2</div>
+                            <div class="roadmap-phase">Automate</div>
+                            <div class="roadmap-metric">48%</div>
+                            <div class="roadmap-label">Deflection Rate</div>
+                            <p class="roadmap-desc">Zero-touch resolution for 15+ subcategories. Monthly retraining cycle.</p>
+                        </div>
+                        <div class="roadmap-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </div>
+                        <div class="roadmap-card year3">
+                            <div class="roadmap-year">Year 3</div>
+                            <div class="roadmap-phase">Autonomous</div>
+                            <div class="roadmap-metric">72%</div>
+                            <div class="roadmap-label">Deflection Rate</div>
+                            <p class="roadmap-desc">Predictive healing via DEX. AI-managed lifecycle & proactive interventions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Governance -->
+        <section class="content-section" id="section-governance">
+            <div class="governance-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>AI Controls</span>
+                    </div>
+                    <div class="controls-list">
+                        <div class="control-item">
+                            <div class="control-status active"></div>
+                            <div>
+                                <strong>Hallucination Guard</strong>
+                                <p>Lexical overlap check validates AI responses against KB articles</p>
+                            </div>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-status active"></div>
+                            <div>
+                                <strong>Bias Mitigation</strong>
+                                <p>Personal Identifier Masking (PIM) active on all inputs</p>
+                            </div>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-status active"></div>
+                            <div>
+                                <strong>Escalation Governance</strong>
+                                <p>Auto-escalate on security, recurring, or team-wide impact triggers</p>
+                            </div>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-status active"></div>
+                            <div>
+                                <strong>Local Inference</strong>
+                                <p>100% on-premise via Ollama. Zero external API calls.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        <span>Audit Trail</span>
+                    </div>
+                    <div id="audit-log-container" class="audit-log-container">
+                        <p class="text-muted">Loading audit logs...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

@@ -29,12 +29,12 @@ _KEYWORD_RULES = [
     (["wifi", "wi-fi", "wireless", "ssid", "corporate_guest", "guest wifi"],
      "network", "WiFi", "Network Support"),
     (["vdi", "virtual desktop", "horizon", "citrix", "remote desktop", "session timed"],
-     "network", "VDI", "Virtualization Team"),
+     "software", "VDI", "Virtualization Team"),
     (["password", "locked", "lock out", "lockout", "credentials", "reset", "expired", "cannot log in", "can't log in", "login"],
      "access", "Password", "Identity & Access"),
     (["onboard", "new joiner", "new employee", "new staff", "start date", "provisioning", "provision"],
      "access", "Onboarding", "Service Desk"),
-    (["sharepoint", "sap", "mfa", "authenticator", "permission", "access request"],
+    (["sharepoint", "sap", "mfa", "authenticator", "permission", "access request", "access for", "log into", "log in to"],
      "access", "Access Request", "Identity & Access"),
     (["outlook", "email", "mail", "attachment", "smtp"],
      "software", "Email", "Software Support"),
@@ -64,9 +64,50 @@ def _keyword_classify(description: str):
 
 def intelligent_classification(description):
     """
-    ARIA Engine: Classify via Ollama LLM with robust JSON parsing.
-    Falls back to keyword rules if Ollama returns unparseable output.
+    ARIA Engine: Hybrid classification strategy.
+    1. Keywords first (deterministic, reliable for known patterns)
+    2. LLM for unknown patterns that keywords can't match
+    3. LLM result validated against keyword rules for consistency
     """
+    # Step 1: Try keyword classification first (fast, deterministic)
+    kw_cat, kw_sub, kw_grp, kw_conf = _keyword_classify(description)
+
+    # If keywords matched a specific pattern (not the default "other"), use it
+    if kw_cat != "other":
+        log_ai_decision(description, f"Classified as {kw_cat}/{kw_sub}", kw_conf, "Classification-Keyword")
+
+        # Step 2: Use LLM to boost confidence and refine group assignment
+        prompt = f"""Analyze this IT support issue and classify it.
+
+Issue: "{description}"
+
+Return ONLY a JSON object with these exact keys (no explanation, no markdown):
+{{"category": "{kw_cat}", "subcategory": "{kw_sub}", "group": "{kw_grp}", "confidence": 0.95}}
+
+Category MUST be one of: access, software, hardware, network, other
+Subcategory MUST be one of: Password, Onboarding, Access Request, Email, Installation, VDI, Application, Performance, Printer, Replacement, Hardware, VPN, WiFi, General
+Group MUST be one of: Identity & Access, Service Desk, Software Support, Virtualization Team, Desktop Support, Facility IT, Hardware Logistics, Network Support
+"""
+        try:
+            response_text = ollama_reasoning(prompt)
+            if response_text:
+                cleaned = re.sub(r"```(?:json)?", "", response_text).strip()
+                match = re.search(r'\{[^{}]+\}', cleaned, re.DOTALL)
+                if match:
+                    result = json.loads(match.group(0))
+                    llm_cat = str(result.get('category', '')).strip().lower()
+                    llm_conf = float(result.get('confidence', 0.0))
+
+                    # Only use LLM confidence if it agrees with keyword category
+                    if llm_cat == kw_cat and llm_conf > kw_conf:
+                        kw_conf = llm_conf
+
+        except Exception:
+            pass
+
+        return kw_cat, kw_sub, kw_grp, kw_conf
+
+    # Step 3: Keywords couldn't match - use LLM for unknown patterns
     prompt = f"""Analyze this IT support issue and classify it.
 
 Issue: "{description}"
@@ -74,15 +115,14 @@ Issue: "{description}"
 Return ONLY a JSON object with these exact keys (no explanation, no markdown):
 {{"category": "network", "subcategory": "VPN", "group": "Network Support", "confidence": 0.95}}
 
-Category must be one of: access, software, hardware, network, onboarding, other
+Category MUST be one of: access, software, hardware, network, other
+Subcategory MUST be one of: Password, Onboarding, Access Request, Email, Installation, VDI, Application, Performance, Printer, Replacement, Hardware, VPN, WiFi, General
+Group MUST be one of: Identity & Access, Service Desk, Software Support, Virtualization Team, Desktop Support, Facility IT, Hardware Logistics, Network Support
 """
     try:
         response_text = ollama_reasoning(prompt)
         if response_text:
-            # Strip markdown code fences if present
             cleaned = re.sub(r"```(?:json)?", "", response_text).strip()
-
-            # Try to extract a JSON object from anywhere in the response
             match = re.search(r'\{[^{}]+\}', cleaned, re.DOTALL)
             if match:
                 result = json.loads(match.group(0))
@@ -91,26 +131,25 @@ Category must be one of: access, software, hardware, network, onboarding, other
                 grp  = str(result.get('group', 'Service Desk')).strip()
                 conf = float(result.get('confidence', 0.0))
 
-                # Validate category is one of the allowed values
-                allowed = {"access", "software", "hardware", "network", "onboarding", "other"}
+                allowed = {"access", "software", "hardware", "network", "other"}
+                if cat == "onboarding":
+                    cat = "access"
+                    sub = sub if sub else "Onboarding"
                 if cat not in allowed:
                     cat = "other"
 
-                # If confidence is suspiciously low but category looks valid,
-                # boost it so governance doesn't blindly escalate everything.
                 if conf < 0.70 and cat != "other":
                     conf = 0.80
 
-                log_ai_decision(description, f"Classified as {cat}/{sub}", conf, "Classification")
+                log_ai_decision(description, f"Classified as {cat}/{sub}", conf, "Classification-LLM")
                 return cat, sub, grp, conf
 
     except Exception:
-        pass  # Fall through to keyword fallback
+        pass
 
-    # ── Keyword fallback ──────────────────────────────────────────
-    cat, sub, grp, conf = _keyword_classify(description)
-    log_ai_decision(description, f"Keyword fallback: {cat}/{sub}", conf, "Classification-Fallback")
-    return cat, sub, grp, conf
+    # Final fallback
+    log_ai_decision(description, f"Fallback: {kw_cat}/{kw_sub}", kw_conf, "Classification-Fallback")
+    return kw_cat, kw_sub, kw_grp, kw_conf
 
 
 def classify_ticket(description):

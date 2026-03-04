@@ -1,340 +1,110 @@
 [
   {
-    "timestamp": "2026-03-04T17:42:40.493377",
-    "type": "Classification",
-    "description": "Account locked after too many login attempts",
-    "decision": "Classified as access/Password",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T17:45:40.814671",
-    "type": "Classification",
-    "description": "Need a device replacement \u2014 current one is broken",
-    "decision": "Classified as hardware/device",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T17:46:11.454909",
-    "type": "Classification",
-    "description": "Outlook crashes when I attach a PDF",
-    "decision": "Classified as software/specific",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T17:47:14.052416",
-    "type": "Classification",
-    "description": "VDI session disconnects every 10 minutes",
-    "decision": "Classified as software/VDI (Virtual Desktop Infrastructure)",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T17:48:18.049332",
-    "type": "Classification",
-    "description": "Excel file won't open, says it's corrupt",
-    "decision": "Classified as software/application",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T17:49:05.644962",
-    "type": "Classification",
-    "description": "Need SharePoint access for the new project",
-    "decision": "Classified as access/software",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:11:09.398355",
-    "type": "Classification",
-    "description": "My WiFi won't connect on my laptop",
-    "decision": "Classified as network/WiFi",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:14:17.089406",
-    "type": "Classification",
-    "description": "Laptop is extremely slow and freezing",
-    "decision": "Classified as hardware/laptop",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:15:37.216450",
-    "type": "Classification",
-    "description": "Need a device replacement \u2014 current one is broken",
-    "decision": "Classified as hardware/device replacement",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:18:40.216248",
-    "type": "Classification",
-    "description": "Unable to log into SAP system",
-    "decision": "Classified as software/access",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:19:03.380717",
-    "type": "Classification",
-    "description": "Need SharePoint access for the new project",
-    "decision": "Classified as software/access",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:23:38.253513",
-    "type": "Classification",
-    "description": "I can't connect to the VPN from home",
-    "decision": "Classified as network/VPN",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:26:40.687353",
-    "type": "Classification",
-    "description": "Need access for new joiner starting Monday",
-    "decision": "Classified as onboarding/access",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:28:41.083961",
-    "type": "Classification",
-    "description": "Printer shows Error 50.1 after clearing paper jam",
-    "decision": "Classified as hardware/Printer",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:29:07.466471",
-    "type": "Classification",
-    "description": "Need a device replacement \u2014 current one is broken",
-    "decision": "Classified as hardware/device",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:30:38.008850",
-    "type": "Classification",
-    "description": "VDI session disconnects every 10 minutes",
-    "decision": "Classified as software/VDI (Virtual Desktop Infrastructure)",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:32:03.666859",
-    "type": "Classification",
-    "description": "Unable to log into SAP system",
-    "decision": "Classified as access/Password",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04T19:32:21.939923",
-    "type": "Classification",
-    "description": "Need SharePoint access for the new project",
-    "decision": "Classified as software/access",
-    "confidence": 0.95
-  },
-  {
-    "timestamp": "2026-03-04 19:43:00",
-    "input": "User cannot connect to VPN from home office.",
-    "response": "Title: \"VPN Connection Issue from Home Office\" | Synthesis: A request has been raised by an unidentified user to resolve a connectivity issue preventing them from accessing the VPN from their home off",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:43:28",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook repeatedly experiences crashes\" | Synthesis: Here is the synthesized summary:\n\nA request has been raised by an end-user to troubleshoot persistent issues with their Outlook a",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:43:56",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Outlook application crashes repeatedly on PC.\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an end-user to resolve an issue with their Microsoft Outlook applicatio",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:44:59",
-    "input": "I can't connect to the VPN from home",
-    "response": "Classified as network/VPN",
+    "timestamp": "2026-03-04 23:14:38",
+    "input": "My laptop screen is cracked",
+    "response": "Classified as hardware/Hardware",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 19:45:35",
-    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
-    "response": "Title: \"Laptop Performance Issues, VPN Disconnections\" | Synthesis: A request has been raised by an unnamed user to troubleshoot and resolve issues with a slow laptop and recurring VPN disconnections.",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:53:42",
-    "input": "User cannot connect to VPN from home office.",
-    "response": "Title: IT Issue: User cannot connect to VPN from home off | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unidentified user to troubleshoot a connectivity issue with the V",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:54:20",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook Crashing on User's PC\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unknown user to troubleshoot persistent issues with Microsoft Outlook, whi",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:55:02",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook Client Continues Crashing\" | Synthesis: A request has been raised by an end-user to troubleshoot recurring issues with their Outlook application, which continues to crash des",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 19:56:38",
-    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
-    "response": "Title: \"Slow laptop with VPN connectivity\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unidentified user to troubleshoot issues with their laptop's performance and VPN",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:09:05",
-    "input": "User cannot connect to VPN from home office.",
-    "response": "Title: \"VPN Connection Failure from Home Office\" | Synthesis: A request has been raised by an unidentified user to troubleshoot connectivity issues with the Virtual Private Network (VPN) from their ho",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:09:36",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook Crashes Frequently Repeatedly\" | Synthesis: A request has been raised by an unidentified user to troubleshoot an issue with their Microsoft Outlook application, which is repe",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:10:04",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook Email Client Crashes\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unidentified user to troubleshoot frequent Outlook crashes.\n\nThe AI has cla",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:11:08",
-    "input": "I can't connect to the VPN from home",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:11:20",
-    "input": "VPN keeps timing out every 10 minutes",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:11:33",
-    "input": "My WiFi won't connect on my laptop",
-    "response": "Classified as network/WiFi",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:11:47",
-    "input": "Can't see the Corporate_Guest WiFi network",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:12:01",
-    "input": "My password expired and I'm locked out",
-    "response": "Classified as access/None",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:12:14",
-    "input": "Account locked after too many login attempts",
-    "response": "Classified as access/passwords",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:12:26",
-    "input": "Need access for new joiner starting Monday",
-    "response": "Classified as onboarding/",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:12:39",
+    "timestamp": "2026-03-04 23:15:10",
     "input": "Please reset my MFA authenticator app",
-    "response": "Classified as access/None",
+    "response": "Classified as access/access",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:12:51",
+    "timestamp": "2026-03-04 23:15:40",
+    "input": "I am a new joiner starting Monday",
+    "response": "Classified as network/VPN",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:16:11",
     "input": "Laptop is extremely slow and freezing",
-    "response": "Classified as hardware/None",
-    "confidence": 0.7,
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:13:04",
+    "timestamp": "2026-03-04 23:16:44",
     "input": "Screen is cracked and battery drains in 20 minutes",
-    "response": "Classified as hardware/None",
+    "response": "Classified as hardware/hardware",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:13:18",
+    "timestamp": "2026-03-04 23:17:17",
     "input": "Printer shows Error 50.1 after clearing paper jam",
-    "response": "Classified as hardware/",
+    "response": "Classified as hardware/Printer",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:13:31",
+    "timestamp": "2026-03-04 23:17:22",
+    "input": "I forgot my password and cannot login",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:17:50",
     "input": "Need a device replacement \u2014 current one is broken",
-    "response": "Classified as hardware/None",
+    "response": "Classified as hardware/Hardware",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:18:18",
+    "input": "VPN keeps disconnecting when working from home",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:18:47",
+    "input": "Outlook crashes when I attach a PDF",
+    "response": "Classified as software/Email",
+    "confidence": 0.95,
+    "tool": "Classification",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:19:16",
+    "input": "My laptop is extremely slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:19:45",
+    "input": "Adobe Acrobat Pro installation needed urgently",
+    "response": "Classified as software/Installation",
     "confidence": 1.0,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:13:44",
-    "input": "Outlook crashes when I attach a PDF",
-    "response": "Classified as software/",
-    "confidence": 0.95,
-    "tool": "Classification",
+    "timestamp": "2026-03-04 23:20:11",
+    "input": "Outlook crashes when opening attachments",
+    "response": "Classified as software/Email",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:13:56",
-    "input": "Adobe Acrobat Pro installation needed urgently",
-    "response": "Classified as software/",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 20:14:09",
+    "timestamp": "2026-03-04 23:20:39",
     "input": "VDI session disconnects every 10 minutes",
     "response": "Classified as network/VPN",
     "confidence": 0.95,
@@ -342,41 +112,289 @@
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:14:23",
+    "timestamp": "2026-03-04 23:21:05",
+    "input": "VDI session keeps freezing",
+    "response": "Classified as network/VDI",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:21:34",
     "input": "Microsoft Teams keeps freezing during calls",
-    "response": "Classified as network/",
+    "response": "Classified as network/VPN",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:14:35",
+    "timestamp": "2026-03-04 23:22:03",
+    "input": "I need Adobe Acrobat installed",
+    "response": "Classified as software/Installation",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:22:32",
     "input": "Excel file won't open, says it's corrupt",
-    "response": "Classified as software/",
+    "response": "Classified as software/Application",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:14:47",
+    "timestamp": "2026-03-04 23:22:59",
+    "input": "Printer on 3rd floor is not working",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:23:28",
     "input": "Unable to log into SAP system",
-    "response": "Classified as other/None",
+    "response": "Classified as software/Application",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:15:00",
+    "timestamp": "2026-03-04 23:23:55",
+    "input": "Cannot connect to WiFi in building B",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:24:25",
     "input": "Need SharePoint access for the new project",
-    "response": "Classified as access/permissions",
+    "response": "Classified as network/VPN",
     "confidence": 0.95,
     "tool": "Classification",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 20:15:29",
+    "timestamp": "2026-03-04 23:24:51",
+    "input": "My laptop screen is cracked",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:25:26",
+    "input": "I am a new joiner starting Monday",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:26:00",
     "input": "My laptop is running very slowly and the VPN keeps disconnecting",
-    "response": "Title: \"Laptop Performance Slow, VPN Disconnects\" | Synthesis: A request has been raised by an unidentified user to investigate performance issues with their laptop and resolve intermittent VPN discon",
+    "response": "Title: \"Slow Laptop with Repeated VPN Disconnections\" | Synthesis: Synthesis pending for: My laptop is running very slowly and the VPN keeps disconnecting",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:28:30",
+    "input": "User cannot connect to VPN from home office.",
+    "response": "Title: \"VPN connectivity issue from home office\" | Synthesis: A request has been raised by an unidentifiable user to troubleshoot a VPN connection issue from their home office.\n\nThe AI has initially c",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:29:12",
+    "input": "Outlook keeps crashing.",
+    "response": "Title: \"Microsoft Outlook Application Crashes Frequently\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unknown user to troubleshoot recurring issues with Outlook crashi",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:29:56",
+    "input": "Outlook keeps crashing.",
+    "response": "Title: \"Outlook Continuously Experiences Unstable Performance.\" | Synthesis: A request has been raised by an unknown user to resolve an issue with Microsoft Outlook repeatedly crashing.\n\nThe AI has cl",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:30:11",
+    "input": "I can't connect to the VPN from home",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:31:13",
+    "input": "VPN keeps timing out every 10 minutes",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:32:12",
+    "input": "My WiFi won't connect on my laptop",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:32:41",
+    "input": "Can't see the Corporate_Guest WiFi network",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:33:10",
+    "input": "My password expired and I'm locked out",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:33:40",
+    "input": "Account locked after too many login attempts",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:34:10",
+    "input": "Need access for new joiner starting Monday",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:34:40",
+    "input": "Please reset my MFA authenticator app",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:35:10",
+    "input": "Laptop is extremely slow and freezing",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:35:39",
+    "input": "Screen is cracked and battery drains in 20 minutes",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:36:09",
+    "input": "Printer shows Error 50.1 after clearing paper jam",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:36:40",
+    "input": "Need a device replacement \u2014 current one is broken",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:37:10",
+    "input": "Outlook crashes when I attach a PDF",
+    "response": "Classified as software/Email",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:37:39",
+    "input": "Adobe Acrobat Pro installation needed urgently",
+    "response": "Classified as software/Installation",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:38:09",
+    "input": "VDI session disconnects every 10 minutes",
+    "response": "Classified as software/VDI",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:38:41",
+    "input": "Microsoft Teams keeps freezing during calls",
+    "response": "Classified as software/Application",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:39:10",
+    "input": "Excel file won't open, says it's corrupt",
+    "response": "Classified as software/Application",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:39:39",
+    "input": "Unable to log into SAP system",
+    "response": "Classified as access/Access Request",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:40:10",
+    "input": "Need SharePoint access for the new project",
+    "response": "Classified as access/Access Request",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:41:29",
+    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
+    "response": "Title: \"Laptop Slow, VPN Disconnects Frequently\" | Synthesis: A request has been raised by an employee to troubleshoot and resolve the slow performance and recurring VPN disconnections on their laptop",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:55:26",
+    "input": "I forgot my password and cannot login to my computer",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-04 23:57:40",
+    "input": "I forgot my password and cannot login to my computer",
+    "response": "Title: \"Forgot Password: Login Access Denied\" | Synthesis: A request has been raised by portal.user@tee-demo.com to reset their password due to a forgotten login credential.\n\nThe AI system has classif",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"

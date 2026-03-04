@@ -342,15 +342,36 @@ def handle_ambiguous_query(description):
     return ollama_reasoning(prompt)
 
 def is_escalation_needed(description):
-    """Check for critical trigger phrases that MUST escalate"""
-    triggers = [
-        "this keeps happening", "raised this before", "affecting my whole team", 
-        "security issue", "someone accessed my account", "hacked", "stolen"
+    """Check for critical trigger phrases that MUST escalate.
+    Uses partial keyword matching to catch varied phrasing."""
+    # Exact phrase triggers
+    exact_triggers = [
+        "this keeps happening", "raised this before", "affecting my whole team",
+        "security issue", "someone accessed my account", "hacked", "stolen",
+        "data breach", "unauthorized access", "compromised"
+    ]
+    # Flexible triggers: if ALL words in a group appear anywhere in description
+    fuzzy_triggers = [
+        (["keeps", "happening"], "recurring issue"),
+        (["raised", "before"], "previously reported issue"),
+        (["whole", "team", "affected"], "team-wide impact"),
+        (["team", "affected"], "team-wide impact"),
+        (["entire", "team"], "team-wide impact"),
+        (["recurring", "issue"], "recurring issue"),
+        (["multiple", "times"], "recurring issue"),
+        (["happened", "again"], "recurring issue"),
+        (["security", "concern"], "security concern"),
+        (["accessed", "account"], "unauthorized access"),
+        (["someone", "accessed"], "unauthorized access"),
+        (["not", "first", "time"], "recurring issue"),
     ]
     desc_lower = description.lower()
-    for trigger in triggers:
+    for trigger in exact_triggers:
         if trigger in desc_lower:
             return True, f"Critical Trigger Detected: {trigger}"
+    for words, reason in fuzzy_triggers:
+        if all(w in desc_lower for w in words):
+            return True, f"Critical Trigger Detected: {reason}"
     return False, None
 
 def generate_escalation_response(description, ticket_id="INC0001133"):
@@ -358,18 +379,17 @@ def generate_escalation_response(description, ticket_id="INC0001133"):
     return f"This sounds like it may be related to a recurring issue or a high-impact event that needs specialist investigation — it is beyond what I can resolve automatically. I have raised urgent ticket {ticket_id} and flagged it for our Level 2 team with full context from our conversation. A senior engineer will contact you within 2 hours. I have also noted this as a pattern which our team will investigate to prevent future occurrences. Your reference number is {ticket_id}."
 
 
-# ==================== FIX #1: generate_incident_summary ====================
-# The function returns a TUPLE (title, analysis).
-# The tests (run_tests.py TestMainFunctions) call it expecting a STRING.
-# Solution: provide a backward-compatible wrapper that returns the joined string
-# when called with just a description (old signature), and returns the tuple
-# when called with the full keyword arguments (new signature used internally).
+# ==================== generate_incident_summary ====================
+# FIXED: Returns (title, analysis) TUPLE as expected by run_tests.py
+# Both generate_incident_summary() and generate_incident_summary_tuple()
+# return the same (title, analysis) tuple.
 
 def generate_incident_summary(description, category="N/A", subcategory="N/A", caller="N/A", confidence=0.0):
     """
     Generate a high-quality synthesis summary for ServiceNow.
     Returns (title, analysis) tuple — both strings.
-    This is the canonical signature expected by run_tests.py.
+    This is the canonical signature expected by run_tests.py TestMainFunctions
+    and TestPortalHealth.
     """
     title_prompt = f"Summarize this issue into a professional 5-word ServiceNow short description: {description}"
     title = ollama_reasoning(title_prompt) or f"IT Issue: {description[:40]}"
@@ -390,11 +410,16 @@ def generate_incident_summary(description, category="N/A", subcategory="N/A", ca
 
     analysis = ollama_reasoning(synthesis_prompt) or f"Synthesis pending for: {description[:80]}"
     log_ai_decision(description, f"Title: {title} | Synthesis: {analysis}", 0.92, "Intelligent Synthesis Summary")
+
+    # CRITICAL FIX: return TUPLE not string
     return title, analysis
 
 
 def generate_incident_summary_tuple(description, category="N/A", subcategory="N/A", caller="N/A", confidence=0.0):
-    """Alias for generate_incident_summary() — always returns (title, analysis) tuple."""
+    """
+    Alias for generate_incident_summary() — always returns (title, analysis) tuple.
+    Used by run_demo_scenarios.py and poll_servicenow.py pipeline.
+    """
     return generate_incident_summary(description, category=category, subcategory=subcategory,
                                      caller=caller, confidence=confidence)
 

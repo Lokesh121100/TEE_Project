@@ -381,8 +381,6 @@ class TestAIClassification(unittest.TestCase):
         fallback_count = 0
 
         for msg, expected in self.TEST_CASES:
-            # ← KEY FIX: was  cat, sub, grp = ...  (crashed with ValueError)
-            #               now cat, sub, grp, conf = ...
             cat, sub, grp, conf = self.ps.classify_ticket(msg)
             if cat and cat.lower() == "inquiry / help":
                 fallback_count += 1
@@ -390,7 +388,7 @@ class TestAIClassification(unittest.TestCase):
                 correct += 1
             else:
                 failures.append(
-                    f"  '{msg[:50]}' → got '{cat}' (conf={conf:.2f}), expected '{expected}'")
+                    f"  '{msg[:50]}' -> got '{cat}' (conf={conf:.2f}), expected '{expected}'")
 
         accuracy = (correct / total) * 100
         log(f"\n  [AI Accuracy] {correct}/{total} correct ({accuracy:.1f}%)")
