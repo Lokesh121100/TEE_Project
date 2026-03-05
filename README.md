@@ -1,6 +1,13 @@
-# 🏆 TEE Service Desk AI: Master Project Specification & Demo Guide
+# 🎯 ARIA v2.0 - AI Service Desk Project
 
-This document is the **single source of truth** for the TEE (Technical Evaluation Exercise). It aligns 100% with Sections 4.1 (TEE) and 4.2 (Deskside Support) of the Tender Requirements.
+**Status**: ✅ **85% Complete** | Ready for Production (2-3 weeks)
+
+## 📚 Documentation
+
+See [docs/README.md](docs/README.md) for complete documentation index:
+- **Managers**: Start with [docs/01_QUICK_STATUS.md](docs/01_QUICK_STATUS.md)
+- **Developers**: See [docs/04_ARCHITECTURE.md](docs/04_ARCHITECTURE.md) & [docs/05_TESTING_GUIDE.md](docs/05_TESTING_GUIDE.md)
+- **Detailed Status**: [docs/02_STATUS_REPORT.md](docs/02_STATUS_REPORT.md)
 
 ---
 
