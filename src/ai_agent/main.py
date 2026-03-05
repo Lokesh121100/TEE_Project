@@ -12,6 +12,17 @@ SERVICENOW_PASS = "@nL=BMhj07Sk"
 TABLE_NAME = "x_1941577_tee_se_0_ai_incident_demo"
 AUDIT_LOG_PATH = "data/ai_audit_logs.json"
 
+# ==================== DEMO CACHE LOADER ====================
+DEMO_CACHE = {}
+try:
+    cache_path = os.path.join(os.getcwd(), 'data', 'demo_cache.json')
+    if os.path.exists(cache_path):
+        with open(cache_path, 'r') as f:
+            DEMO_CACHE = json.load(f).get('scenarios', {})
+        print(f"[CACHE] Loaded {len(DEMO_CACHE)} demo scenarios")
+except Exception as e:
+    print(f"[CACHE] Warning: Could not load demo cache: {e}")
+
 # ==================== ARIA MASTER PROMPT ====================
 ARIA_SYSTEM_PROMPT = """
 You are ARIA (Automated Resolution and Intelligence Agent), an AI IT support agent for a large research and government organisation.
@@ -324,7 +335,27 @@ def ollama_reasoning(prompt, model="llama3", system_content=ARIA_SYSTEM_PROMPT, 
     return None
 
 def validate_query_relevance(description):
-    """Use AI to filter irrelevant or non-IT queries"""
+    """Validate if query is IT-related using keyword matching and AI fallback"""
+    # List of IT-related keywords (expanded for better matching)
+    it_keywords = [
+        'password', 'login', 'email', 'outlook', 'computer', 'laptop', 'desktop',
+        'vpn', 'network', 'internet', 'wifi', 'server', 'database', 'system',
+        'application', 'software', 'crash', 'error', 'bug', 'issue', 'problem',
+        'access', 'account', 'license', 'permission', 'device', 'phone', 'mobile',
+        'printer', 'scanner', 'monitor', 'keyboard', 'mouse', 'hard drive', 'memory',
+        'installation', 'update', 'upgrade', 'backup', 'recover', 'delete', 'restore',
+        'configure', 'setup', 'install', 'uninstall', 'troubleshoot', 'debug',
+        'connection', 'disconnect', 'slow', 'frozen', 'hang', 'not working',
+        'not responding', 'blank screen', 'no connection', 'cannot connect',
+        'performance', 'storage', 'disk', 'file', 'folder', 'document'
+    ]
+
+    # Check if description contains IT keywords
+    description_lower = description.lower()
+    if any(keyword in description_lower for keyword in it_keywords):
+        return True  # Clearly IT-related
+
+    # Fallback: Use AI only for ambiguous queries
     prompt = (
         f"Query: {description}\n\n"
         "Is this query relevant to IT Technical Support? "

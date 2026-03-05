@@ -1,37 +1,5 @@
 [
   {
-    "timestamp": "2026-03-04 23:15:40",
-    "input": "I am a new joiner starting Monday",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:16:11",
-    "input": "Laptop is extremely slow and freezing",
-    "response": "Classified as hardware/Performance",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:16:44",
-    "input": "Screen is cracked and battery drains in 20 minutes",
-    "response": "Classified as hardware/hardware",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:17:17",
-    "input": "Printer shows Error 50.1 after clearing paper jam",
-    "response": "Classified as hardware/Printer",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
     "timestamp": "2026-03-04 23:17:22",
     "input": "I forgot my password and cannot login",
     "response": "Classified as access/Password",
@@ -395,6 +363,38 @@
     "timestamp": "2026-03-05 16:12:29",
     "input": "My laptop is running extremely slow and takes 10 minutes to boot",
     "response": "Title: \"Slow Boot Laptop Performance Issue Reported\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot a slow-booting laptop, which takes approximately 10 minutes to s",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-05 22:30:08",
+    "input": "I forgot my password and cannot login to my computer",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-05 22:30:19",
+    "input": "I forgot my password and cannot login to my computer",
+    "response": "Title: IT Issue: I forgot my password and cannot login to | Synthesis: Synthesis pending for: I forgot my password and cannot login to my computer",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-05 23:03:55",
+    "input": "laptop display broken",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-05 23:06:06",
+    "input": "laptop display broken",
+    "response": "Title: Here is a 5-word ServiceNow short description: \"Laptop Display Not Working Properly\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to replac",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"

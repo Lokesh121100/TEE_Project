@@ -181,9 +181,52 @@
 
                     <!-- Result -->
                     <div id="result-container" class="result-container" style="display: none;"></div>
+
+                    <!-- Escalation Actions -->
+                    <div class="escalation-actions" id="escalation-actions" style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid #30363d;">
+                        <button id="escalate-btn" class="btn-escalate">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 5L3 15h8v5l10-10h-8V5z"></path></svg>
+                            Escalate to Human Support
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Escalation Modal -->
+        <div id="escalation-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Escalate to Human Support</h2>
+                    <button id="modal-close" class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="escalation-reason">Reason for Escalation</label>
+                        <textarea id="escalation-reason" placeholder="Explain why this needs human assistance..." rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="escalation-priority">Priority Level</label>
+                        <select id="escalation-priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Conversation Transcript</label>
+                        <div id="escalation-transcript" class="transcript-box" style="background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px; max-height: 150px; overflow-y: auto; color: #8b949e; font-size: 0.85em;">
+                            <p style="color: #6e7681;">No conversation yet</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-cancel" class="btn-secondary">Cancel</button>
+                    <button id="modal-submit" class="btn-primary">Submit Escalation</button>
+                </div>
+            </div>
+        </div>
 
         <!-- SECTION: Analytics -->
         <section class="content-section" id="section-analytics">

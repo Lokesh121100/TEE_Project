@@ -218,6 +218,128 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // ---- Escalation to Human ----
+    let currentTicketId = null;
+    let conversationTranscript = [];
+
+    const escalationBtn = document.getElementById("escalate-btn");
+    const escalationActions = document.getElementById("escalation-actions");
+    const modal = document.getElementById("escalation-modal");
+    const modalClose = document.getElementById("modal-close");
+    const modalCancel = document.getElementById("modal-cancel");
+    const modalSubmit = document.getElementById("modal-submit");
+    const escalationReason = document.getElementById("escalation-reason");
+    const escalationPriority = document.getElementById("escalation-priority");
+    const escalationTranscript = document.getElementById("escalation-transcript");
+
+    // Show escalation option when result is displayed
+    const originalShowResult = (html, title, ticket) => {
+        resultContainer.innerHTML = html;
+        resultContainer.style.display = "block";
+        if (escalationActions) {
+            escalationActions.style.display = "flex";
+        }
+        currentTicketId = ticket || "TICKET-001";
+        conversationTranscript.push(`User inquiry processed. Result: ${title}`);
+        updateTranscriptDisplay();
+    };
+
+    // Update transcript display in modal
+    const updateTranscriptDisplay = () => {
+        if (!escalationTranscript) return;
+        if (conversationTranscript.length === 0) {
+            escalationTranscript.innerHTML = "<p style='color: #6e7681;'>No conversation yet</p>";
+        } else {
+            escalationTranscript.innerHTML = conversationTranscript
+                .map((msg, i) => `<p style="margin: 4px 0; color: #8b949e;"><strong>[${i+1}]</strong> ${msg}</p>`)
+                .join("");
+        }
+    };
+
+    // Modal open
+    if (escalationBtn) {
+        escalationBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+            escalationReason.focus();
+        });
+    }
+
+    // Modal close
+    const closeModal = () => {
+        if (modal) modal.style.display = "none";
+        if (escalationReason) escalationReason.value = "";
+        if (escalationPriority) escalationPriority.value = "Medium";
+    };
+
+    if (modalClose) modalClose.addEventListener("click", closeModal);
+    if (modalCancel) modalCancel.addEventListener("click", closeModal);
+
+    // Modal submit
+    if (modalSubmit) {
+        modalSubmit.addEventListener("click", async () => {
+            const reason = escalationReason.value.trim();
+            if (!reason) {
+                alert("Please provide a reason for escalation");
+                return;
+            }
+
+            // Disable submit button
+            modalSubmit.disabled = true;
+            modalSubmit.textContent = "Submitting...";
+
+            try {
+                const response = await fetch("/api/escalate", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        ticket_id: currentTicketId,
+                        reason: reason,
+                        priority: escalationPriority.value,
+                        transcript: conversationTranscript
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Show success message
+                    closeModal();
+                    const successHtml = `
+                        <div style='background: #0d3b66; color: #76c893; padding: 20px; border-radius: 12px; border: 1px solid #2a9d8f; text-align: center;'>
+                            <h2 style='color: #76c893; margin-bottom: 10px;'>✓ Escalated Successfully</h2>
+                            <p><strong>Reference Number:</strong> <span style='font-family: monospace; font-size: 1.1em;'>${data.escalation_number}</span></p>
+                            <p><strong>Assigned Team:</strong> ${data.assigned_team}</p>
+                            <p><strong>SLA:</strong> ${data.sla_minutes} minutes response time</p>
+                            <p style='margin-top: 15px; color: #90e0ef;'>${data.message}</p>
+                        </div>
+                    `;
+                    resultContainer.innerHTML = successHtml;
+                    escalationActions.style.display = "none";
+
+                    // Reset conversation
+                    conversationTranscript = [];
+                    currentTicketId = null;
+                } else {
+                    alert("Escalation failed: " + (data.error || "Unknown error"));
+                }
+            } catch (error) {
+                alert("Error: " + error.message);
+            } finally {
+                modalSubmit.disabled = false;
+                modalSubmit.textContent = "Submit Escalation";
+            }
+        });
+    }
+
+    // Close modal when clicking outside
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
     // Initial load
     checkHealth();
     loadMetrics();

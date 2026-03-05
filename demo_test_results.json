@@ -1,0 +1,52 @@
+[
+  {
+    "scenario": 1,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 2,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 3,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 4,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 5,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 6,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 7,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 8,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 9,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  },
+  {
+    "scenario": 10,
+    "status": "FAIL",
+    "reason": "HTTP 404"
+  }
+]
