@@ -1,5 +1,5 @@
 /* ============================================
-   ARIA v2.0 — Enterprise AI Service Desk UI
+   IntelSoft — Enterprise AI Service Desk UI
    Inspired by Linear, Vercel, ServiceNow Workspace
    ============================================ */
 
@@ -937,3 +937,599 @@ textarea::placeholder { color: var(--text-muted); }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ---- Analytics Row (2-col) ---- */
+.analytics-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ---- Confusion Matrix ---- */
+.cm-header {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.cm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.cm-cell {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 12px;
+}
+
+.cm-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.cm-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.cm-bar-wrap {
+    height: 4px;
+    background: var(--border-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.cm-bar {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.cm-note {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ---- SLA Dashboard ---- */
+.sla-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sla-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 12px;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    align-items: center;
+}
+
+.sla-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    grid-column: 1;
+}
+
+.sla-risk {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-align: right;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.sla-label {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+    margin-top: -12px;
+}
+
+.sla-sla {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    grid-column: 1;
+}
+
+.sla-rec {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    grid-column: 1;
+}
+
+/* ---- DEX Section ---- */
+.dex-summary {
+    display: flex;
+    gap: 24px;
+    padding: 12px 0 16px;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 16px;
+}
+
+.dex-sum-item {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.dex-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.dex-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dex-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dex-device-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text);
+}
+
+.dex-device-type {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.dex-score {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.dex-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dex-metric-row {
+    display: grid;
+    grid-template-columns: 48px 1fr 36px;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.dex-bar-wrap {
+    height: 4px;
+    background: var(--border-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.dex-bar {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.btn-remediate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--error-light);
+    color: var(--error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+    margin-top: auto;
+}
+
+.btn-remediate:hover {
+    background: var(--error);
+    color: #fff;
+}
+
+.btn-remediate:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.dex-healthy {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--success);
+    font-weight: 500;
+    padding: 8px;
+    background: var(--success-light);
+    border-radius: var(--radius);
+}
+
+/* ---- Smart Locker Status Grid ---- */
+.locker-status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 20px;
+}
+
+.locker-status-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+}
+
+.locker-status-card.available {
+    background: rgba(16, 185, 129, 0.03);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.locker-status-card.occupied {
+    background: rgba(245, 158, 11, 0.03);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.locker-num {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.locker-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+}
+
+.locker-floor {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.locker-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.available-badge {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.occupied-badge {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+/* ---- Locker Banner (shown after replacement ticket) ---- */
+.locker-banner {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(37, 99, 235, 0.06));
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: var(--radius);
+    animation: fadeIn 0.4s ease;
+}
+
+.locker-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--purple-light);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--purple);
+}
+
+.locker-info { flex: 1; }
+
+.locker-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--purple);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.locker-detail {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.locker-pin {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.locker-expiry {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* ---- ROI Grid ---- */
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 20px;
+}
+
+.roi-card {
+    text-align: center;
+    padding: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+}
+
+.roi-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.roi-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.roi-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* ---- Section label badge (sidebar) ---- */
+.nav-label-badge {
+    margin-left: auto;
+    font-size: 0.62rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* ---- DEX Section wrapper ---- */
+#section-dex {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 32px;
+}
+
+#section-dex.active {
+    display: flex;
+}
+
+/* ---- Responsive updates ---- */
+@media (max-width: 1024px) {
+    .analytics-row { grid-template-columns: 1fr; }
+    .dex-grid { grid-template-columns: repeat(2, 1fr); }
+    .locker-status-grid { grid-template-columns: repeat(2, 1fr); }
+    .roi-grid { grid-template-columns: repeat(2, 1fr); }
+    .cm-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .dex-grid { grid-template-columns: 1fr; }
+    .locker-status-grid { grid-template-columns: 1fr 1fr; }
+    .roi-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   VPN AUTO-REMEDIATION PANEL
+   ============================================================ */
+
+.vpn-idle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px;
+    text-align: center;
+}
+
+.vpn-running {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 20px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.vpn-spinner {
+    width: 22px;
+    height: 22px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.vpn-result-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px 0 20px;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 16px;
+}
+
+.vpn-status-badge {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.vpn-meta {
+    flex: 1;
+}
+
+.vpn-meta-row {
+    font-size: 0.83rem;
+    color: #475569;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.vpn-meta-row strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.vpn-steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.vpn-step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.vpn-step-row:last-child {
+    border-bottom: none;
+}
+
+.vpn-step-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.vpn-step-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.vpn-step-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.vpn-step-cmd {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.78rem;
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 2px 8px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.vpn-step-detail {
+    font-size: 0.81rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.vpn-step-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* ============================================================
+   CONFUSION MATRIX ENHANCEMENTS
+   ============================================================ */
+
+.cm-count {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.cm-subcats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.cm-subcat {
+    font-size: 0.72rem;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.cm-subcat em {
+    color: #94a3b8;
+    font-style: normal;
+}

@@ -1,141 +1,5 @@
 [
   {
-    "timestamp": "2026-03-04 23:18:18",
-    "input": "VPN keeps disconnecting when working from home",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:18:47",
-    "input": "Outlook crashes when I attach a PDF",
-    "response": "Classified as software/Email",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:19:16",
-    "input": "My laptop is extremely slow",
-    "response": "Classified as hardware/Performance",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:19:45",
-    "input": "Adobe Acrobat Pro installation needed urgently",
-    "response": "Classified as software/Installation",
-    "confidence": 1.0,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:20:11",
-    "input": "Outlook crashes when opening attachments",
-    "response": "Classified as software/Email",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:20:39",
-    "input": "VDI session disconnects every 10 minutes",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:21:05",
-    "input": "VDI session keeps freezing",
-    "response": "Classified as network/VDI",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:21:34",
-    "input": "Microsoft Teams keeps freezing during calls",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:22:03",
-    "input": "I need Adobe Acrobat installed",
-    "response": "Classified as software/Installation",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:22:32",
-    "input": "Excel file won't open, says it's corrupt",
-    "response": "Classified as software/Application",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:22:59",
-    "input": "Printer on 3rd floor is not working",
-    "response": "Classified as hardware/Printer",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:23:28",
-    "input": "Unable to log into SAP system",
-    "response": "Classified as software/Application",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:23:55",
-    "input": "Cannot connect to WiFi in building B",
-    "response": "Classified as network/WiFi",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:24:25",
-    "input": "Need SharePoint access for the new project",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:24:51",
-    "input": "My laptop screen is cracked",
-    "response": "Classified as hardware/Replacement",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:25:26",
-    "input": "I am a new joiner starting Monday",
-    "response": "Classified as access/Onboarding",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:26:00",
-    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
-    "response": "Title: \"Slow Laptop with Repeated VPN Disconnections\" | Synthesis: Synthesis pending for: My laptop is running very slowly and the VPN keeps disconnecting",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
     "timestamp": "2026-03-04 23:28:30",
     "input": "User cannot connect to VPN from home office.",
     "response": "Title: \"VPN connectivity issue from home office\" | Synthesis: A request has been raised by an unidentifiable user to troubleshoot a VPN connection issue from their home office.\n\nThe AI has initially c",
@@ -397,6 +261,142 @@
     "response": "Title: \"Laptop Display Not Functioning Properly\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to request a replacement for their laptop due to a b",
     "confidence": 0.92,
     "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-07 01:34:54",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-07 01:37:39",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Title: \"New Employee Onboarding System Access Request\" | Synthesis: A request has been raised by portal.user@tee-demo.com to facilitate the onboarding process for a new employee joining the organizati",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:43:57",
+    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:45:31",
+    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
+    "response": "Title: \"Printer offline with error code 50.1\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot the printer on Floor 3, Area B, which has been rendered offline despite",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:48:52",
+    "input": "Printer on Floor 3 shows Error 50.1",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:49:42",
+    "input": "Printer on Floor 3 shows Error 50.1",
+    "response": "Title: \"Floor 3 Printer Reports Error 50.1\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to investigate and resolve the issue with the printer on ",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:52:59",
+    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:53:48",
+    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
+    "response": "Title: \"User login access denied, password expired?\" | Synthesis: A request has been raised by portal.user@tee-demo.com to resolve an issue with accessing their computer.\n\nBased on the input, the AI h",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 09:53:50",
+    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
+    "response": "Classified as access/Password",
+    "confidence": 0.95,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:00:16",
+    "input": "VPN Auto-Remediation diagnostic pipeline",
+    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
+    "confidence": 0.94,
+    "tool": "VPN Auto-Remediation",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:02:34",
+    "input": "I accidentally poured my drink over my laptop last night. Now it will not turn on and I have a huge ",
+    "response": "Classified as hardware/Hardware",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:04:08",
+    "input": "I accidentally poured my drink over my laptop last night. Now it will not turn on and I have a huge ",
+    "response": "Title: \"Laptop Water Damage - Critical Presentation\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to report a hardware issue with their laptop, wh",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:04:09",
+    "input": "I accidentally poured my drink over my laptop last night. Now it will not turn on and I have a huge ",
+    "response": "Classified as hardware/Hardware",
+    "confidence": 0.95,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:23:41",
+    "input": "VPN Auto-Remediation diagnostic pipeline",
+    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
+    "confidence": 0.94,
+    "tool": "VPN Auto-Remediation",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:27:21",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:28:54",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Title: \"New Employee System Provision and Hardware\" | Synthesis: A request has been raised by portal.user@tee-demo.com to facilitate the onboarding process for a new employee, including provisioning s",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-09 10:29:30",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.95,
+    "tool": "Incident Stream",
     "outcome": "Success"
   }
 ]

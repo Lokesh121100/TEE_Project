@@ -1,31 +1,43 @@
-# Environment Variables (SENSITIVE)
+# ============================================================
+# IntelSoft AI Service Desk — .gitignore
+# ============================================================
+
+# --- Secrets (NEVER PUSH) ---
 .env
 **/.env
+.env.*
+!.env.example
 
-# Python Virtual Environments
+# --- Dev-only scripts (contain hardcoded credentials) ---
+src/utils/
+
+# --- Python Virtual Environments ---
 .venv/
-**/venv/
 venv/
 env/
+**/venv/
 
-# Python caching
+# --- Python Cache ---
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.pdb
 
-# Temporary files and logs
+# --- Generated / Temporary Files ---
 *.log
-deploy_error.txt
-deploy_error_full.txt
-deploy_error_utf8.txt
-hf_demo_test.txt
-hf_demo_test_utf8.txt
+data/accuracy_report.json
+data/aria_governance.db
 
-# Artifacts/System generated
-.gemini/
-.gradio/
-
-# OS generated files
+# --- OS Files ---
 .DS_Store
 Thumbs.db
+
+# --- IDE ---
+.vscode/
+.idea/
+
+# --- Artifacts ---
+.gemini/
+.gradio/
+mcp/servicenow/venv/

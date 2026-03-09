@@ -6,10 +6,10 @@ import os
 import time
 
 # ==================== CONFIGURATION ====================
-SERVICENOW_URL = "https://dev273008.service-now.com"
-SERVICENOW_USER = "admin"
-SERVICENOW_PASS = "@nL=BMhj07Sk"
-TABLE_NAME = "x_1941577_tee_se_0_ai_incident_demo"
+SERVICENOW_URL = os.environ.get("SERVICENOW_URL", "https://dev273008.service-now.com")
+SERVICENOW_USER = os.environ.get("SERVICENOW_USER", "admin")
+SERVICENOW_PASS = os.environ.get("SERVICENOW_PASS", "")
+TABLE_NAME = os.environ.get("SERVICENOW_TABLE", "x_1941577_tee_se_0_ai_incident_demo")
 AUDIT_LOG_PATH = "data/ai_audit_logs.json"
 
 # ==================== DEMO CACHE LOADER ====================
@@ -504,7 +504,7 @@ def create_servicenow_incident(short_description, category, subcategory, caller,
             headers={"Content-Type": "application/json"}
         )
         
-        if response.status_code == 201:
+        if response.status_code in (200, 201):
             incident_data = response.json().get('result', {})
             inc_num = incident_data.get('number', 'INC-' + incident_data.get('sys_id', '0000')[:6].upper())
             print(f"  SUCCESS: Incident created.")

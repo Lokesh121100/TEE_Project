@@ -1,0 +1,19 @@
+# IntelSoft AI Service Desk - Dependencies
+# Install with: pip install -r requirements.txt
+
+# Web Framework
+fastapi==0.115.0
+uvicorn==0.30.6
+
+# HTTP & Auth
+requests==2.32.3
+
+# AI / ML
+transformers==4.44.2
+torch==2.4.1
+
+# Gradio (alternative portal UI)
+gradio==4.44.1
+
+# Environment variable loading
+python-dotenv==1.0.1
