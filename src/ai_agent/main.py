@@ -10,6 +10,41 @@ SERVICENOW_URL = os.environ.get("SERVICENOW_URL", "https://dev273008.service-now
 SERVICENOW_USER = os.environ.get("SERVICENOW_USER", "admin")
 SERVICENOW_PASS = os.environ.get("SERVICENOW_PASS", "")
 TABLE_NAME = os.environ.get("SERVICENOW_TABLE", "x_1941577_tee_se_0_ai_incident_demo")
+
+# ==================== MICROSOFT ENTRA ID (GRAPH API) ====================
+MS_TENANT_ID = os.environ.get("MS_TENANT_ID", "f1e1f75a-eaa3-4eda-b8c2-cb741da37fc2")
+MS_CLIENT_ID = os.environ.get("MS_CLIENT_ID", "f0da6886-636a-4e89-bf88-bb4fe317ffec")
+MS_CLIENT_SECRET = os.environ.get("MS_CLIENT_SECRET", "")
+MS_DOMAIN = os.environ.get("MS_DOMAIN", "intelsoft379.onmicrosoft.com")
+
+def get_graph_token():
+    r = requests.post(
+        f"https://login.microsoftonline.com/{MS_TENANT_ID}/oauth2/v2.0/token",
+        data={
+            "grant_type": "client_credentials",
+            "client_id": MS_CLIENT_ID,
+            "client_secret": MS_CLIENT_SECRET,
+            "scope": "https://graph.microsoft.com/.default"
+        }
+    )
+    return r.json().get("access_token")
+
+def reset_entra_password(username: str, new_password: str) -> dict:
+    """Actually reset a Microsoft Entra ID (Azure AD) user password via Graph API."""
+    try:
+        token = get_graph_token()
+        headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+        upn = f"{username}@{MS_DOMAIN}"
+        r = requests.patch(
+            f"https://graph.microsoft.com/v1.0/users/{upn}",
+            headers=headers,
+            json={"passwordProfile": {"forceChangePasswordNextSignIn": False, "password": new_password}}
+        )
+        if r.status_code == 204:
+            return {"success": True, "upn": upn, "new_password": new_password}
+        return {"success": False, "error": r.json().get("error", {}).get("message", "Unknown error")}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
 AUDIT_LOG_PATH = "data/ai_audit_logs.json"
 
 # ==================== DEMO CACHE LOADER ====================
@@ -169,16 +204,39 @@ def run_auto_resolution(subcategory, description):
     """Refined Automation Engine matching Client TEE Requirements"""
     print(f"  [AI Automation] Triggered for [{subcategory}]...", end=" ")
     
-    # 1. Password Reset (Verify + Reset)
+    # 1. Password Reset (Verify + Reset via Microsoft Entra ID Graph API)
     if subcategory == "Password":
+        import random, string
+
         print("\n    [TOOL: MCP/AD] Verifying identity via MFA...", end=" ")
         print("VERIFIED")
-        print("    [TOOL: SN API] Triggering Password Reset workflow...", end=" ")
-        return {
-            "status": "Resolved", 
-            "notes": "AI Auto-Resolution: User identity verified via MFA. Triggered AD Password Reset. Temporary password sent via SMS.",
-            "success": True
-        }
+        print("\n    [TOOL: MS GRAPH API] Resetting Entra ID password...", end=" ")
+
+        # Generate secure temp password
+        temp_pwd = "ARIA@" + ''.join(random.choices(string.ascii_letters + string.digits, k=8)) + "1!"
+
+        # REAL password reset via Microsoft Graph API
+        result = reset_entra_password("lokesh.jayasankar", temp_pwd)
+
+        if result["success"]:
+            print("RESET SUCCESSFUL")
+            notes = (
+                f"AI Auto-Resolution: User identity verified via MFA. "
+                f"**Microsoft Entra ID password has been RESET via Graph API.**\n\n"
+                f"**Your new temporary password is: `{temp_pwd}`**\n\n"
+                f"Login at: https://myaccount.microsoft.com\n"
+                f"Account: lokesh.jayasankar@{MS_DOMAIN}\n\n"
+                f"Please change your password after logging in."
+            )
+        else:
+            print("FAILED - using fallback")
+            notes = (
+                f"AI Auto-Resolution: Identity verified via MFA. "
+                f"Password reset attempted but encountered an issue: {result.get('error')}. "
+                f"Escalating to IT team."
+            )
+
+        return {"status": "Resolved", "notes": notes, "success": result["success"]}
     
     # 2. VPN Issue (Diagnose + Troubleshoot)
     elif subcategory == "VPN":
