@@ -1,401 +1,401 @@
 [
   {
-    "timestamp": "2026-03-04 23:28:30",
-    "input": "User cannot connect to VPN from home office.",
-    "response": "Title: \"VPN connectivity issue from home office\" | Synthesis: A request has been raised by an unidentifiable user to troubleshoot a VPN connection issue from their home office.\n\nThe AI has initially c",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:29:12",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Microsoft Outlook Application Crashes Frequently\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by an unknown user to troubleshoot recurring issues with Outlook crashi",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:29:56",
-    "input": "Outlook keeps crashing.",
-    "response": "Title: \"Outlook Continuously Experiences Unstable Performance.\" | Synthesis: A request has been raised by an unknown user to resolve an issue with Microsoft Outlook repeatedly crashing.\n\nThe AI has cl",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:30:11",
-    "input": "I can't connect to the VPN from home",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:31:13",
-    "input": "VPN keeps timing out every 10 minutes",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:32:12",
-    "input": "My WiFi won't connect on my laptop",
-    "response": "Classified as network/WiFi",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:32:41",
-    "input": "Can't see the Corporate_Guest WiFi network",
-    "response": "Classified as network/WiFi",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:33:10",
-    "input": "My password expired and I'm locked out",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:33:40",
-    "input": "Account locked after too many login attempts",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:34:10",
-    "input": "Need access for new joiner starting Monday",
-    "response": "Classified as access/Onboarding",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:34:40",
-    "input": "Please reset my MFA authenticator app",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:35:10",
-    "input": "Laptop is extremely slow and freezing",
-    "response": "Classified as hardware/Performance",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:35:39",
-    "input": "Screen is cracked and battery drains in 20 minutes",
-    "response": "Classified as hardware/Replacement",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:36:09",
-    "input": "Printer shows Error 50.1 after clearing paper jam",
+    "timestamp": "2026-03-10 11:35:14",
+    "input": "Printer is jammed",
     "response": "Classified as hardware/Printer",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:36:40",
-    "input": "Need a device replacement \u2014 current one is broken",
+    "timestamp": "2026-03-10 11:35:41",
+    "input": "Printer offline Floor 3",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:36:07",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN Disconnection Issues at Home Office\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to resolve persistent VPN disconnections affecting t",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:36:29",
+    "input": "Error 50.1 on printer",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:36:51",
+    "input": "Scanner not working",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:37:13",
+    "input": "Printer won't print",
+    "response": "Classified as hardware/Printer",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:37:20",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:37:35",
+    "input": "WiFi not visible",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:38:16",
+    "input": "Cannot see guest wifi",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:38:43",
+    "input": "WiFi cuts out on phone",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:39:08",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN connectivity issues at home site.\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to resolve a recurring VPN disconnection issue.\n\nThe A",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:39:29",
+    "input": "Corporate WiFi missing",
+    "response": "Classified as network/WiFi",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:40:12",
+    "input": "Network signal is weak",
+    "response": "Classified as network/VPN",
+    "confidence": 0.95,
+    "tool": "Classification-LLM",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:40:13",
+    "input": "Cracked screen",
     "response": "Classified as hardware/Replacement",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:37:10",
-    "input": "Outlook crashes when I attach a PDF",
+    "timestamp": "2026-03-10 11:40:34",
+    "input": "Spilled water on laptop",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:40:41",
+    "input": "VPN Auto-Remediation diagnostic pipeline",
+    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
+    "confidence": 0.94,
+    "tool": "VPN Auto-Remediation",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:40:56",
+    "input": "I was at a party and poured some drink over the laptop",
+    "response": "Classified as hardware/Hardware",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:41:19",
+    "input": "Broken laptop hinge",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:41:41",
+    "input": "Need a new device",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:42:01",
+    "input": "I am a new staff member starting on Monday",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:42:22",
+    "input": "Onboarding process help",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:42:44",
+    "input": "No laptop for my start date",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:43:06",
+    "input": "Manager needs to onboard user",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:43:29",
+    "input": "Provisioning for new joiner",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:44:51",
+    "input": "Outlook keeps crashing whenever I try to attach a PDF document. Blocking my ability to send reports.",
     "response": "Classified as software/Email",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:37:39",
-    "input": "Adobe Acrobat Pro installation needed urgently",
-    "response": "Classified as software/Installation",
+    "timestamp": "2026-03-10 11:46:03",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:38:09",
-    "input": "VDI session disconnects every 10 minutes",
+    "timestamp": "2026-03-10 11:46:08",
+    "input": "Outlook keeps crashing whenever I try to attach a PDF document. Blocking my ability to send reports.",
+    "response": "Title: \"Outlook crashes when attaching PDF files.\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot the frequent crashes of their Outlook application when attempting ",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:47:21",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN Disconnection Issue at Home\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to resolve a persistent VPN disconnection issue.\n\nThe AI has",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:51:15",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:52:38",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN Disconnects Frequently at Home Office\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot frequent VPN disconnections while working from home.\n\nThe AI has c",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:53:22",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 11:54:39",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN Connection Drops Frequent Reconnect Required\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to resolve persistent VPN disconnections wh",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:00:38",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:03:00",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN Disconnection Issue at Home Workspace\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot persistent VPN connectivity issues.\n\nThe AI has classified this re",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:03:39",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:17:52",
+    "input": "VPN Auto-Remediation diagnostic pipeline",
+    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
+    "confidence": 0.94,
+    "tool": "VPN Auto-Remediation",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:20:17",
+    "input": "VPN Auto-Remediation diagnostic pipeline",
+    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
+    "confidence": 0.94,
+    "tool": "VPN Auto-Remediation",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:22:51",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:24:24",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Title: \"VPN Disconnects Frequently at Home Location\" | Synthesis: Here is a clear, human-readable synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to resolve a recurring VPN d",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 12:24:30",
+    "input": "My VPN keeps disconnecting every few minutes. I am working from home and it is making it impossible ",
+    "response": "Classified as network/VPN",
+    "confidence": 0.85,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 13:03:49",
+    "input": "VPN Auto-Remediation diagnostic pipeline",
+    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
+    "confidence": 0.94,
+    "tool": "VPN Auto-Remediation",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 13:51:57",
+    "input": "VDI session disconnects every 10 minutes. Getting a Session Timed Out error repeatedly.",
     "response": "Classified as software/VDI",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:38:41",
-    "input": "Microsoft Teams keeps freezing during calls",
-    "response": "Classified as software/Application",
+    "timestamp": "2026-03-10 13:53:19",
+    "input": "VDI session disconnects every 10 minutes. Getting a Session Timed Out error repeatedly.",
+    "response": "Title: \"VDI Session Disconnects Frequent Timed Out\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot frequent disconnections in their VDI session, resulting in repeat",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 13:53:21",
+    "input": "VDI session disconnects every 10 minutes. Getting a Session Timed Out error repeatedly.",
+    "response": "Classified as software/VDI",
+    "confidence": 0.95,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 16:39:50",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Classified as access/Onboarding",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:39:10",
-    "input": "Excel file won't open, says it's corrupt",
-    "response": "Classified as software/Application",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
+    "timestamp": "2026-03-10 16:39:58",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Title: IT Issue: A new employee is joining the organizati | Synthesis: Synthesis pending for: A new employee is joining the organization on Monday. We need to provision their",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:39:39",
-    "input": "Unable to log into SAP system",
+    "timestamp": "2026-03-10 16:40:00",
+    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
+    "response": "Classified as access/Onboarding",
+    "confidence": 0.85,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 17:09:33",
+    "input": "Writing\n\nSubject: Request for Claude AI Access \u2013 Incident INC0012345\n\nHi Team,\n\nI have raised an inc",
     "response": "Classified as access/Access Request",
     "confidence": 0.85,
     "tool": "Classification-Keyword",
     "outcome": "Success"
   },
   {
-    "timestamp": "2026-03-04 23:40:10",
-    "input": "Need SharePoint access for the new project",
+    "timestamp": "2026-03-10 17:09:47",
+    "input": "Writing\n\nSubject: Request for Claude AI Access \u2013 Incident INC0012345\n\nHi Team,\n\nI have raised an inc",
+    "response": "Title: IT Issue: Writing\n\nSubject: Request for Claude AI  | Synthesis: Synthesis pending for: Writing\n\nSubject: Request for Claude AI Access \u2013 Incident INC0012345\n\nHi Team,\n\n",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-10 17:09:49",
+    "input": "Writing\n\nSubject: Request for Claude AI Access \u2013 Incident INC0012345\n\nHi Team,\n\nI have raised an inc",
     "response": "Classified as access/Access Request",
     "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:41:29",
-    "input": "My laptop is running very slowly and the VPN keeps disconnecting",
-    "response": "Title: \"Laptop Slow, VPN Disconnects Frequently\" | Synthesis: A request has been raised by an employee to troubleshoot and resolve the slow performance and recurring VPN disconnections on their laptop",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:55:26",
-    "input": "I forgot my password and cannot login to my computer",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-04 23:57:40",
-    "input": "I forgot my password and cannot login to my computer",
-    "response": "Title: \"Forgot Password: Login Access Denied\" | Synthesis: A request has been raised by portal.user@tee-demo.com to reset their password due to a forgotten login credential.\n\nThe AI system has classif",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 16:11:24",
-    "input": "My laptop is running extremely slow and takes 10 minutes to boot",
-    "response": "Classified as hardware/Performance",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 16:12:29",
-    "input": "My laptop is running extremely slow and takes 10 minutes to boot",
-    "response": "Title: \"Slow Boot Laptop Performance Issue Reported\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot a slow-booting laptop, which takes approximately 10 minutes to s",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 22:30:08",
-    "input": "I forgot my password and cannot login to my computer",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 22:30:19",
-    "input": "I forgot my password and cannot login to my computer",
-    "response": "Title: IT Issue: I forgot my password and cannot login to | Synthesis: Synthesis pending for: I forgot my password and cannot login to my computer",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 23:03:55",
-    "input": "laptop display broken",
-    "response": "Classified as hardware/Replacement",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 23:06:06",
-    "input": "laptop display broken",
-    "response": "Title: Here is a 5-word ServiceNow short description: \"Laptop Display Not Working Properly\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to replac",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 23:07:39",
-    "input": "laptop display broken",
-    "response": "Classified as hardware/Replacement",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-05 23:08:18",
-    "input": "laptop display broken",
-    "response": "Title: \"Laptop Display Not Functioning Properly\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to request a replacement for their laptop due to a b",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-07 01:34:54",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Classified as access/Onboarding",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-07 01:37:39",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Title: \"New Employee Onboarding System Access Request\" | Synthesis: A request has been raised by portal.user@tee-demo.com to facilitate the onboarding process for a new employee joining the organizati",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:43:57",
-    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
-    "response": "Classified as hardware/Printer",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:45:31",
-    "input": "Printer on Floor 3, Area B is offline. Paper jam cleared but screen still shows Error 50.1.",
-    "response": "Title: \"Printer offline with error code 50.1\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot the printer on Floor 3, Area B, which has been rendered offline despite",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:48:52",
-    "input": "Printer on Floor 3 shows Error 50.1",
-    "response": "Classified as hardware/Printer",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:49:42",
-    "input": "Printer on Floor 3 shows Error 50.1",
-    "response": "Title: \"Floor 3 Printer Reports Error 50.1\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to investigate and resolve the issue with the printer on ",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:52:59",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:53:48",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "Title: \"User login access denied, password expired?\" | Synthesis: A request has been raised by portal.user@tee-demo.com to resolve an issue with accessing their computer.\n\nBased on the input, the AI h",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 09:53:50",
-    "input": "I cannot log in to my computer. I think my password has expired or I am locked out.",
-    "response": "Classified as access/Password",
-    "confidence": 0.95,
-    "tool": "Incident Stream",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:00:16",
-    "input": "VPN Auto-Remediation diagnostic pipeline",
-    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
-    "confidence": 0.94,
-    "tool": "VPN Auto-Remediation",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:02:34",
-    "input": "I accidentally poured my drink over my laptop last night. Now it will not turn on and I have a huge ",
-    "response": "Classified as hardware/Hardware",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:04:08",
-    "input": "I accidentally poured my drink over my laptop last night. Now it will not turn on and I have a huge ",
-    "response": "Title: \"Laptop Water Damage - Critical Presentation\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to report a hardware issue with their laptop, wh",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:04:09",
-    "input": "I accidentally poured my drink over my laptop last night. Now it will not turn on and I have a huge ",
-    "response": "Classified as hardware/Hardware",
-    "confidence": 0.95,
-    "tool": "Incident Stream",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:23:41",
-    "input": "VPN Auto-Remediation diagnostic pipeline",
-    "response": "network/VPN: Auto-resolved via DNS flush + VPN agent restart",
-    "confidence": 0.94,
-    "tool": "VPN Auto-Remediation",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:27:21",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Classified as access/Onboarding",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:28:54",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Title: \"New Employee System Provision and Hardware\" | Synthesis: A request has been raised by portal.user@tee-demo.com to facilitate the onboarding process for a new employee, including provisioning s",
-    "confidence": 0.92,
-    "tool": "Intelligent Synthesis Summary",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-09 10:29:30",
-    "input": "A new employee is joining the organization on Monday. We need to provision their system access and a",
-    "response": "Classified as access/Onboarding",
-    "confidence": 0.95,
     "tool": "Incident Stream",
     "outcome": "Success"
   }

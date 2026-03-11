@@ -1,308 +1,458 @@
 {
-    "timestamp": "2026-03-04 12:35:12",
-    "accuracy": 96.0,
-    "passed": 48,
+    "timestamp": "2026-03-10 11:43:51",
+    "accuracy": 88.0,
+    "passed": 44,
     "total": 50,
     "details": [
         {
             "message": "I forgot my password",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Password",
+            "confidence": 0.85,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "My account is locked",
+            "message": "My account is locked",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Password",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "I cannot log in",
+            "message": "I cannot log in",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Password",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Password not working",
+            "message": "Password not working",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Password",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Need to reset my credentials",
+            "message": "Need to reset my credentials",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Password",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "VPN not connecting",
+            "message": "VPN not connecting",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "VPN",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "VPN keeps dropping",
+            "message": "VPN keeps dropping",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "VPN",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Cannot access company network",
+            "message": "Cannot access company network",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "VPN",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Remote access broken",
+            "message": "Remote access broken",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "VPN",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "VPN error on my laptop",
+            "message": "VPN error on my laptop",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "VPN",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "My laptop is really slow",
+            "message": "My laptop is really slow",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Performance",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Computer takes ages to start",
+            "message": "Computer takes ages to start",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "general",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Everything is freezing",
+            "message": "Everything is freezing",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Performance",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "High CPU usage",
+            "message": "High CPU usage",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Performance",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Device performance is terrible",
+            "message": "Device performance is terrible",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Performance",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Outlook keeps crashing",
+            "message": "Outlook keeps crashing",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Email",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Attachments won't open in email",
+            "message": "Attachments won't open in email",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Email",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Outlook is frozen",
+            "message": "Outlook is frozen",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Email",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Cannot send emails",
+            "message": "Cannot send emails",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Email",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Outlook error code 0x800",
+            "message": "Outlook error code 0x800",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Email",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "VDI session disconnects",
+            "message": "VDI session disconnects",
             "expected_cat": "network",
-            "actual_cat": "network",
-            "correct": true
+            "actual_cat": "software",
+            "actual_sub": "VDI",
+            "confidence": 0.95,
+            "correct": false,
+            "escalated": false
         },
         {
-            "msg": "Virtual desktop is laggy",
+            "message": "Virtual desktop is laggy",
             "expected_cat": "network",
-            "actual_cat": "network",
-            "correct": true
+            "actual_cat": "software",
+            "actual_sub": "VDI",
+            "confidence": 0.95,
+            "correct": false,
+            "escalated": false
         },
         {
-            "msg": "Cannot log into VDI",
+            "message": "Cannot log into VDI",
             "expected_cat": "network",
-            "actual_cat": "network",
-            "correct": true
+            "actual_cat": "software",
+            "actual_sub": "VDI",
+            "confidence": 0.95,
+            "correct": false,
+            "escalated": false
         },
         {
-            "msg": "Remote desktop session lost",
+            "message": "Remote desktop session lost",
             "expected_cat": "network",
-            "actual_cat": "network",
-            "correct": true
+            "actual_cat": "software",
+            "actual_sub": "VDI",
+            "confidence": 0.95,
+            "correct": false,
+            "escalated": false
         },
         {
-            "msg": "VDI error every 10 mins",
+            "message": "VDI error every 10 mins",
             "expected_cat": "network",
-            "actual_cat": "network",
-            "correct": true
+            "actual_cat": "software",
+            "actual_sub": "VDI",
+            "confidence": 0.95,
+            "correct": false,
+            "escalated": false
         },
         {
-            "msg": "Need Adobe Acrobat installed",
+            "message": "Need Adobe Acrobat installed",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Installation",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Requesting new software",
+            "message": "Requesting new software",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Installation",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Permission to install app",
+            "message": "Permission to install app",
+            "expected_cat": "software",
+            "actual_cat": "access",
+            "actual_sub": "Access Request",
+            "confidence": 0.95,
+            "correct": false,
+            "escalated": false
+        },
+        {
+            "message": "Need Excel licensed",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Application",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Need Excel licensed",
+            "message": "Install Chrome for me",
             "expected_cat": "software",
             "actual_cat": "software",
-            "correct": true
+            "actual_sub": "Installation",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Install Chrome for me",
-            "expected_cat": "software",
-            "actual_cat": "software",
-            "correct": true
-        },
-        {
-            "msg": "Printer is jammed",
+            "message": "Printer is jammed",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Printer",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Printer offline Floor 3",
+            "message": "Printer offline Floor 3",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Printer",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Error 50.1 on printer",
+            "message": "Error 50.1 on printer",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Printer",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Scanner not working",
+            "message": "Scanner not working",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Printer",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Printer won't print",
+            "message": "Printer won't print",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Printer",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "WiFi not visible",
+            "message": "WiFi not visible",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "WiFi",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Cannot see guest wifi",
+            "message": "Cannot see guest wifi",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "WiFi",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "WiFi cuts out on phone",
+            "message": "WiFi cuts out on phone",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "WiFi",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Corporate WiFi missing",
+            "message": "Corporate WiFi missing",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "WiFi",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Network signal is weak",
+            "message": "Network signal is weak",
             "expected_cat": "network",
             "actual_cat": "network",
-            "correct": true
+            "actual_sub": "VPN",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Cracked screen",
+            "message": "Cracked screen",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Replacement",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Spilled water on laptop",
-            "expected_cat": "hardware",
-            "actual_cat": "other",
-            "correct": false
-        },
-        {
-            "msg": "Keyboard keys missing",
+            "message": "Spilled water on laptop",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Replacement",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Broken laptop hinge",
+            "message": "I was at a party and poured some drink over the laptop",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Hardware",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Need a new device",
+            "message": "Broken laptop hinge",
             "expected_cat": "hardware",
             "actual_cat": "hardware",
-            "correct": true
+            "actual_sub": "Replacement",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "I am a new staff member starting on Monday",
+            "message": "Need a new device",
+            "expected_cat": "hardware",
+            "actual_cat": "hardware",
+            "actual_sub": "Replacement",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
+        },
+        {
+            "message": "I am a new staff member starting on Monday",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Onboarding",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Onboarding process help",
+            "message": "Onboarding process help",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Onboarding",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "No laptop for my start date",
-            "expected_cat": "access",
-            "actual_cat": "other",
-            "correct": false
-        },
-        {
-            "msg": "Manager needs to onboard user",
+            "message": "No laptop for my start date",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Onboarding",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         },
         {
-            "msg": "Provisioning for new joiner",
+            "message": "Manager needs to onboard user",
             "expected_cat": "access",
             "actual_cat": "access",
-            "correct": true
+            "actual_sub": "Onboarding",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
+        },
+        {
+            "message": "Provisioning for new joiner",
+            "expected_cat": "access",
+            "actual_cat": "access",
+            "actual_sub": "Onboarding",
+            "confidence": 0.95,
+            "correct": true,
+            "escalated": false
         }
     ]
 }
