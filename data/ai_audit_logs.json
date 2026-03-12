@@ -1,37 +1,5 @@
 [
   {
-    "timestamp": "2026-03-11 15:24:09",
-    "input": "I can't connect to the VPN",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 15:25:11",
-    "input": "I can't connect to the VPN",
-    "response": "Virtual Agent: Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 15:50:45",
-    "input": "I can't connect to the VPN",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 15:51:43",
-    "input": "I can't connect to the VPN",
-    "response": "Virtual Agent: Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
     "timestamp": "2026-03-11 16:06:14",
     "input": "vpn issue",
     "response": "Classified as network/VPN",
@@ -397,6 +365,38 @@
     "response": "Classified as access/Password",
     "confidence": 0.95,
     "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-12 10:54:05",
+    "input": "password reset",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-12 10:55:09",
+    "input": "password reset",
+    "response": "Virtual Agent: Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "ServiceNow Chat",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-12 10:56:51",
+    "input": "password reset",
+    "response": "Classified as access/Password",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-12 10:57:02",
+    "input": "password reset",
+    "response": "Virtual Agent: Classified as access/Password",
+    "confidence": 0.95,
+    "tool": "ServiceNow Chat",
     "outcome": "Success"
   }
 ]

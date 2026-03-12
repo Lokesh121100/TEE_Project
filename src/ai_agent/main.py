@@ -559,7 +559,8 @@ def create_servicenow_incident(short_description, category, subcategory, caller,
             url,
             json=payload,
             auth=HTTPBasicAuth(SERVICENOW_USER, SERVICENOW_PASS),
-            headers={"Content-Type": "application/json"}
+            headers={"Content-Type": "application/json"},
+            timeout=10
         )
         
         if response.status_code in (200, 201):

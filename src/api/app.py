@@ -782,6 +782,9 @@ def _gen_temp_pwd():
     return "ARIA@" + ''.join(random.choices(chars, k=8)) + "1!"
 
 def _is_password_intent(msg: str) -> bool:
+    # If user typed their email address directly, treat as password reset intent
+    if "@" in msg and "." in msg:
+        return True
     keywords = ["password", "expired", "locked", "cannot log", "can't log", "forgot",
                 "reset", "account locked", "login", "locked out", "hacked", "access"]
     return any(k in msg.lower() for k in keywords)
@@ -797,6 +800,12 @@ def _is_non_it(msg: str) -> bool:
 @app.post("/api/chat")
 async def conversational_chat(request: Request):
     """SC-001 multi-step conversational chat with real Entra ID password reset."""
+    try:
+        return await _handle_chat(request)
+    except Exception as e:
+        return {"reply": f"An error occurred. Please try again or contact IT support. ({str(e)[:80]})", "step": "error", "meta": {}}
+
+async def _handle_chat(request: Request):
     from main import reset_entra_password, create_servicenow_incident
     data = await request.json()
     session_id = data.get("session_id", "default")
@@ -813,18 +822,18 @@ async def conversational_chat(request: Request):
 
     # T10 — Non-IT guardrail
     if _is_non_it(user_msg):
-        reply = ("⚠️ I'm ARIA, IntelSoft's IT Support AI. I can only help with IT issues "
-                 "like password resets, software problems, or device issues. "
+        reply = ("Thank you for contacting Intelsoft IT Support. We can only assist with IT-related issues "
+                 "such as password resets, software problems, or device issues. "
                  "Please contact the relevant department for non-IT requests.")
         return {"reply": reply, "step": "blocked", "meta": meta}
 
     # T12 — Security escalation
     if _is_security_threat(user_msg):
         inc_num = f"INC-SEC{random.randint(1000,9999)}"
-        reply = (f"🚨 **Security Alert Detected.** I've immediately escalated this to the "
-                 f"Security Operations Centre (SOC) as a **P2 priority** incident.\n\n"
-                 f"Ticket **{inc_num}** has been created. Our security team will contact you within 15 minutes. "
-                 f"Please do NOT log into any accounts until the SOC clears you.")
+        reply = (f"Security Alert Detected. The Intelsoft IT Support team has immediately escalated this to the "
+                 f"Security Operations Centre (SOC) as a P2 priority incident.\n"
+                 f"Ticket {inc_num} has been created. Our security team will contact you within 15 minutes.\n"
+                 f"Please do not log into any accounts until the SOC clears you.")
         s["step"] = "done"
         meta = {"incident": inc_num, "priority": "P2", "team": "SOC"}
         return {"reply": reply, "step": "escalated_soc", "meta": meta}
@@ -833,11 +842,17 @@ async def conversational_chat(request: Request):
     if step == "greet":
         if _is_password_intent(user_msg):
             s["step"] = "ask_email"
-            reply = ("👋 Hi, I'm **ARIA** — IntelSoft's AI Service Desk agent.\n\n"
-                     "I can help you reset your password. "
-                     "Please enter your **work email address** to get started.")
+            # If user already provided their email in the issue field, skip asking again
+            if "@" in user_msg and "." in user_msg:
+                reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
+                         "I can see you have provided your email. Please confirm your email address to continue:")
+            else:
+                reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
+                         "I can help you reset your password or unlock your account. "
+                         "Please enter your work email address to get started.")
         else:
-            reply = ("Hi, I'm ARIA. I can help with IT issues like password resets, "
+            reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
+                     "We can help with IT issues such as password resets, "
                      "VPN problems, software issues, and more.\n\nWhat do you need help with?")
 
     # Step: collect email
@@ -862,20 +877,21 @@ async def conversational_chat(request: Request):
                     s["otp"] = otp
                     s["otp_attempts"] = 0
                     s["step"] = "verify_otp"
-                    status_note = " *(Account is currently locked — will be unlocked after verification)*" if locked else ""
-                    reply = (f"✅ **User found:** {u.get('displayName', email)}{status_note}\n\n"
-                             f"🔐 Sending a **6-digit OTP** to your registered phone/email...\n\n"
-                             f"*(Demo OTP: **`{otp}`**)*\n\nPlease enter the OTP to verify your identity.")
+                    status_note = " (Account is currently locked and will be unlocked after verification)" if locked else ""
+                    reply = (f"User found: {u.get('displayName', email)}{status_note}\n\n"
+                             f"A 6-digit OTP has been sent to your registered contact.\n\n"
+                             f"Demo OTP: {otp}\n\n"
+                             f"Please enter the OTP to verify your identity.")
                 elif r.status_code == 404:
                     # T11 — User not found
                     inc_num = f"INC-NF{random.randint(1000,9999)}"
-                    reply = (f"❌ **User not found** for `{email}`.\n\n"
-                             f"I've escalated this to the IT team. Ticket **{inc_num}** created. "
+                    reply = (f"We were unable to find an account for {email}.\n\n"
+                             f"This request has been escalated to the Intelsoft IT Support team. Ticket {inc_num} has been created. "
                              f"An agent will contact you within 30 minutes.")
                     s["step"] = "done"
                     meta = {"incident": inc_num, "priority": "P3"}
                 else:
-                    reply = "Unable to look up your account right now. Please try again or contact the IT helpdesk."
+                    reply = "Unable to look up your account right now. Please try again or contact the Intelsoft IT helpdesk."
             except Exception as e:
                 reply = f"Error looking up account: {str(e)[:100]}. Please try again."
 
@@ -896,38 +912,37 @@ async def conversational_chat(request: Request):
                     category="access", subcategory="Password",
                     caller=s["email"],
                     assignment_group="Identity & Access",
-                    summary=f"ARIA AI agent reset Entra ID password for {s['email']} after MFA verification.",
+                    summary=f"Intelsoft IT Support reset Entra ID password for {s['email']} after identity verification.",
                     knowledge="", auto_fix={"status": "Resolved", "notes": f"Temp pwd issued: {temp_pwd}", "success": True}
                 )
-                reply = (f"✅ **Identity Verified!**\n\n"
-                         f"🔄 Microsoft Entra ID password has been **RESET** via Graph API.\n\n"
-                         f"🔑 **Your new temporary password:**\n"
-                         f"```\n{temp_pwd}\n```\n\n"
-                         f"📧 **Account:** `{s['email']}`\n"
-                         f"🌐 **Login at:** https://portal.office.com\n\n"
-                         f"⚠️ Please change your password after logging in.\n\n"
-                         f"📋 ServiceNow ticket **{inc_num}** created (Status: Resolved).")
+                reply = (f"Identity Verified.\n\n"
+                         f"Your Microsoft Entra ID password has been reset successfully.\n\n"
+                         f"Temporary Password: {temp_pwd}\n\n"
+                         f"Account: {s['email']}\n"
+                         f"Login at: https://portal.office.com\n\n"
+                         f"Please change your password after logging in.\n\n"
+                         f"ServiceNow ticket {inc_num} has been created (Status: Resolved).")
                 meta = {"incident": inc_num, "temp_password": temp_pwd, "status": "Resolved"}
             else:
-                reply = (f"✅ Identity verified, but password reset encountered an issue: "
-                         f"{result.get('error')}. Escalating to IT team.")
+                reply = (f"Identity verified, but the password reset encountered an issue: "
+                         f"{result.get('error')}. This has been escalated to the Intelsoft IT Support team.")
                 s["step"] = "done"
         else:
             s["otp_attempts"] += 1
             if s["otp_attempts"] >= 3:
                 # T04 — Wrong OTP 3 times → escalate
                 inc_num = f"INC-OTP{random.randint(1000,9999)}"
-                reply = (f"❌ **Too many incorrect OTP attempts.**\n\n"
-                         f"For security, this request has been **escalated to an L1 agent** as **P2 priority**.\n\n"
-                         f"Ticket **{inc_num}** created. An agent will call you within 15 minutes.")
+                reply = (f"Too many incorrect OTP attempts.\n\n"
+                         f"For security, this request has been escalated to the Intelsoft IT Support team as P2 priority.\n\n"
+                         f"Ticket {inc_num} has been created. An agent will contact you within 15 minutes.")
                 s["step"] = "done"
                 meta = {"incident": inc_num, "priority": "P2", "reason": "OTP_MAX_ATTEMPTS"}
             else:
                 remaining = 3 - s["otp_attempts"]
-                reply = f"❌ Incorrect OTP. You have **{remaining} attempt(s)** remaining. Please try again."
+                reply = f"Incorrect OTP. You have {remaining} attempt(s) remaining. Please try again."
 
     elif step == "done":
-        reply = "This session is complete. Click **New Chat** to start a new request."
+        reply = "This session is complete. Please start a new chat to raise a new request."
 
     return {"reply": reply, "step": s["step"], "meta": meta}
 
