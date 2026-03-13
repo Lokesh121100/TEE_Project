@@ -1,125 +1,5 @@
 [
   {
-    "timestamp": "2026-03-11 16:06:14",
-    "input": "vpn issue",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:07:06",
-    "input": "vpn issue",
-    "response": "Virtual Agent: Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:09:45",
-    "input": "aria",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification-LLM",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:09:45",
-    "input": "aria",
-    "response": "Virtual Agent: Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:11:11",
-    "input": "passwoed reset",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:11:53",
-    "input": "passwoed reset",
-    "response": "Virtual Agent: Classified as access/Password",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:24:18",
-    "input": "laptop password need to resset",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 16:25:14",
-    "input": "laptop password need to resset",
-    "response": "Virtual Agent: Classified as access/Password",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:45:17",
-    "input": "password need to be reset",
-    "response": "Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:46:20",
-    "input": "password need to be reset",
-    "response": "Virtual Agent: Classified as access/Password",
-    "confidence": 0.85,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:52:24",
-    "input": "aria",
-    "response": "Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "Classification-LLM",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:52:24",
-    "input": "aria",
-    "response": "Virtual Agent: Classified as network/VPN",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:55:00",
-    "input": "laptop display as broken",
-    "response": "Classified as hardware/Replacement",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:55:17",
-    "input": "laptop display as broken",
-    "response": "Virtual Agent: Classified as hardware/Replacement",
-    "confidence": 0.95,
-    "tool": "ServiceNow Chat",
-    "outcome": "Success"
-  },
-  {
-    "timestamp": "2026-03-11 18:56:56",
-    "input": "im vpn issue",
-    "response": "Classified as network/VPN",
-    "confidence": 0.85,
-    "tool": "Classification-Keyword",
-    "outcome": "Success"
-  },
-  {
     "timestamp": "2026-03-11 18:57:13",
     "input": "im vpn issue",
     "response": "Virtual Agent: Classified as network/VPN",
@@ -397,6 +277,126 @@
     "response": "Virtual Agent: Classified as access/Password",
     "confidence": 0.95,
     "tool": "ServiceNow Chat",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:06:44",
+    "input": "my laptop screen is flickering",
+    "response": "Classified as hardware/Replacement",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:21:46",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:23:16",
+    "input": "my laptop is slow",
+    "response": "Title: \"Laptop Performance Slow, Requires Analysis\" | Synthesis: A request has been raised by portal.user@tee-demo.com to investigate the slow performance of their laptop.\n\nThe AI has classified this ",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:23:17",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:23:57",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:23:59",
+    "input": "my laptop is slow",
+    "response": "Title: \"Laptop Performance Slowness: Initial Assessment\" | Synthesis: Here is the synthesized summary:\n\nA request has been raised by portal.user@tee-demo.com to troubleshoot the slow performance of th",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:24:35",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:24:41",
+    "input": "my laptop is slow",
+    "response": "Title: \"User reports laptop performance issues.\" | Synthesis: A request has been raised by portal.user@tee-demo.com to troubleshoot and improve the performance of their laptop.\n\nThe AI has classified ",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:25:18",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:25:22",
+    "input": "my laptop is slow",
+    "response": "Title: \"Slow Performance: Laptop Speed Issue\" | Synthesis: A request has been raised by portal.user@tee-demo.com to report a slow laptop performance issue.\n\nBased on the input, the AI classified the r",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:26:05",
+    "input": "my laptop is slow",
+    "response": "Title: \"Laptop Performance Slowly Degrading: Investigation Needed\" | Synthesis: Here is the synthesis summary:\n\nA request has been raised by portal.user@tee-demo.com to report a slow laptop performanc",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:26:07",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.95,
+    "tool": "Incident Stream",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:26:31",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.85,
+    "tool": "Classification-Keyword",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:27:14",
+    "input": "my laptop is slow",
+    "response": "Title: \"Laptop Performance: Slow Boot-Up Issue\" | Synthesis: A request has been raised by portal.user@tee-demo.com to investigate the slow performance of their laptop.\n\nBased on the AI's analysis, thi",
+    "confidence": 0.92,
+    "tool": "Intelligent Synthesis Summary",
+    "outcome": "Success"
+  },
+  {
+    "timestamp": "2026-03-13 23:27:22",
+    "input": "my laptop is slow",
+    "response": "Classified as hardware/Performance",
+    "confidence": 0.95,
+    "tool": "Incident Stream",
     "outcome": "Success"
   }
 ]

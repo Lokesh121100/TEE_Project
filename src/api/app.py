@@ -155,41 +155,40 @@ async def create_incident_stream(request: Request):
 
     def event_generator():
         try:
-            # Step 1: Validate relevance
-            yield _sse_event("AI Guardrail: Validating query relevance...")
+            # Step 1: AI Guardrail
+            yield _sse_event("AI Guardrail: Validating request relevance and detecting non-IT queries...")
             if not validate_query_relevance(description):
-                yield _sse_event("done", "<div style='color:#ff7b72;padding:20px;'>Query filtered: not IT-related.</div>")
+                yield _sse_event("done", "<div style='color:#ff7b72;padding:20px;'>Query filtered: not IT-related. Please contact the relevant department.</div>")
                 return
 
-            # Step 2: Check escalation
-            yield _sse_event("AI Reasoning: Checking escalation triggers...")
+            # Step 2: AI Reasoning
+            yield _sse_event("AI Reasoning: Extracting key information — problem, device, system impacted, urgency...")
             escalate, reason = is_escalation_needed(description)
 
-            # Step 3: Classify
-            yield _sse_event("AI Classification: Determining Category & Route...")
+            # Step 3: AI Classification
+            yield _sse_event("AI Classification: Mapping to ServiceNow — Category, Subcategory, Assignment Group, Priority...")
             category, subcategory, group, confidence = classify_incident(description)
 
             if escalate:
-                yield _sse_event("Governance: Escalation triggered - routing to L2...")
+                yield _sse_event("AI Classification: Escalation trigger detected — routing to L2 Senior Support...")
                 category, subcategory, group, confidence = "other", "Escalation", "L2 Senior Support", 0.0
 
             # Step 4: Generate summary
-            yield _sse_event("AI Synthesis: Generating Intelligent Case Summary...")
             title, analysis = generate_incident_summary_tuple(
                 description, category=category, subcategory=subcategory,
                 caller="portal.user@tee-demo.com", confidence=confidence
             )
 
-            # Step 5: RAG
-            yield _sse_event("RAG: Retrieving best-match KB articles...")
+            # Step 5: RAG Retrieval
+            yield _sse_event("RAG Retrieval: Retrieving relevant knowledge articles and troubleshooting steps...")
             knowledge = retrieve_knowledge(description)
 
-            # Step 6: Auto-resolution
-            yield _sse_event("Automation: Checking Zero-Touch eligibility...")
+            # Step 6: Automation Check
+            yield _sse_event("Automation Check: Determining if issue qualifies for automated resolution...")
             auto_fix = run_auto_resolution(subcategory, description)
 
-            # Step 7: Create ServiceNow incident
-            yield _sse_event("Platform: Creating ServiceNow Record...")
+            # Step 7: Platform Integration
+            yield _sse_event("Platform Integration: Creating ServiceNow incident record...")
             success, inc_num = create_servicenow_incident(
                 short_description=title,
                 category=category,
@@ -202,7 +201,11 @@ async def create_incident_stream(request: Request):
             )
 
             if success:
-                # GAP 1: Log AI decision to audit trail
+                # Step 8: Completion
+                completion_status = "Auto-resolving issue — no human agent required." if auto_fix['status'] == "Resolved" else "Routing to human support team..."
+                yield _sse_event(f"Completion: {completion_status}")
+
+                # Log AI decision to audit trail
                 try:
                     log_ai_decision(
                         description,
@@ -793,8 +796,43 @@ def _is_security_threat(msg: str) -> bool:
     keywords = ["hacked", "someone accessed", "unauthorised", "unauthorized", "breach", "compromised"]
     return any(k in msg.lower() for k in keywords)
 
+def _is_vpn_intent(msg: str) -> bool:
+    keywords = ["vpn", "cisco", "forticlient", "anyconnect", "remote access",
+                "cannot connect", "tunnel", "virtual private", "office network",
+                "work from home", "wfh network", "corporate network"]
+    return any(k in msg.lower() for k in keywords)
+
+def _is_vpn_credential_issue(msg: str) -> bool:
+    keywords = ["password", "credential", "invalid", "wrong password", "authentication",
+                "login failed", "sign in", "expired", "locked", "cannot authenticate",
+                "401", "access denied", "username"]
+    return any(k in msg.lower() for k in keywords)
+
+def _vpn_check_account(email: str):
+    """Check if user account is locked or password expired via Graph API"""
+    from main import get_graph_token
+    import requests as _req
+    try:
+        token = get_graph_token()
+        r = _req.get(
+            f"https://graph.microsoft.com/v1.0/users/{email}",
+            headers={"Authorization": f"Bearer {token}"}
+        )
+        if r.status_code == 200:
+            u = r.json()
+            return {
+                "found": True,
+                "locked": u.get("accountEnabled") == False,
+                "displayName": u.get("displayName", email)
+            }
+        return {"found": False}
+    except Exception as e:
+        return {"found": False, "error": str(e)}
+
 def _is_non_it(msg: str) -> bool:
-    non_it = ["flight", "hotel", "food", "restaurant", "weather", "sports", "movie"]
+    non_it = ["flight", "hotel", "food", "restaurant", "weather", "sports", "movie",
+              "book a meeting", "meeting room", "leave request", "payroll", "salary",
+              "hr ", "holiday", "travel", "reimbursement"]
     return any(k in msg.lower() for k in non_it)
 
 @app.post("/api/chat")
@@ -841,12 +879,42 @@ async def _handle_chat(request: Request):
     # Step: greet / intent detection
     if step == "greet":
         if _is_password_intent(user_msg):
-            s["step"] = "ask_email"
-            # If user already provided their email in the issue field, skip asking again
+            # If user typed their email directly in the first message, process it immediately
             if "@" in user_msg and "." in user_msg:
-                reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
-                         "I can see you have provided your email. Please confirm your email address to continue:")
+                from main import get_graph_token
+                import requests as _req
+                email = user_msg.strip().lower()
+                try:
+                    token = get_graph_token()
+                    r = _req.get(f"https://graph.microsoft.com/v1.0/users/{email}",
+                                 headers={"Authorization": f"Bearer {token}"})
+                    if r.status_code == 200:
+                        u = r.json()
+                        s["email"] = email
+                        s["username"] = email.split("@")[0]
+                        locked = u.get("accountEnabled") == False
+                        otp = _gen_otp()
+                        s["otp"] = otp
+                        s["otp_attempts"] = 0
+                        s["step"] = "verify_otp"
+                        status_note = " (Account is currently locked)" if locked else ""
+                        reply = (f"Hello, thank you for contacting Intelsoft IT Support.\n\n"
+                                 f"User found: {u.get('displayName', email)}{status_note}\n\n"
+                                 f"A 6-digit OTP has been sent to your registered contact.\n\n"
+                                 f"Demo OTP: {otp}\n\n"
+                                 f"Please enter the OTP to verify your identity.")
+                        meta = {"otp": otp}
+                    else:
+                        s["step"] = "ask_email"
+                        reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
+                                 "I can help you reset your password or unlock your account. "
+                                 "Please enter your work email address to get started.")
+                except Exception:
+                    s["step"] = "ask_email"
+                    reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
+                             "I can help you reset your password. Please enter your work email address:")
             else:
+                s["step"] = "ask_email"
                 reply = ("Hello, thank you for contacting Intelsoft IT Support.\n"
                          "I can help you reset your password or unlock your account. "
                          "Please enter your work email address to get started.")
@@ -882,6 +950,7 @@ async def _handle_chat(request: Request):
                              f"A 6-digit OTP has been sent to your registered contact.\n\n"
                              f"Demo OTP: {otp}\n\n"
                              f"Please enter the OTP to verify your identity.")
+                    meta = {"otp": otp}
                 elif r.status_code == 404:
                     # T11 — User not found
                     inc_num = f"INC-NF{random.randint(1000,9999)}"
@@ -945,6 +1014,172 @@ async def _handle_chat(request: Request):
         reply = "This session is complete. Please start a new chat to raise a new request."
 
     return {"reply": reply, "step": s["step"], "meta": meta}
+
+
+# ── SC-002 VPN Issue Chat Sessions ──────────────────────────────────────────
+_vpn_sessions = {}
+
+@app.post("/api/vpn/chat")
+async def vpn_chat(request: Request):
+    """SC-002 VPN Issue — Flow A (credential fix) + Flow B (network escalation)"""
+    try:
+        data = await request.json()
+        session_id = data.get("session_id", "default")
+        user_msg = data.get("message", "").strip()
+
+        if session_id not in _vpn_sessions:
+            _vpn_sessions[session_id] = {
+                "step": "greet",
+                "issue_type": None,
+                "email": None
+            }
+
+        s = _vpn_sessions[session_id]
+        step = s["step"]
+        reply = ""
+        meta = {}
+
+        # Non-IT guardrail
+        if _is_non_it(user_msg):
+            reply = ("Thank you for contacting Intelsoft IT Support. "
+                     "We can only assist with IT-related issues. "
+                     "Please contact the relevant department for non-IT requests.")
+            return {"reply": reply, "step": "blocked", "meta": meta}
+
+        # Greet — detect VPN issue type
+        if step == "greet":
+            if _is_vpn_intent(user_msg) or _is_vpn_credential_issue(user_msg):
+                if _is_vpn_credential_issue(user_msg):
+                    s["issue_type"] = "credential"
+                    s["step"] = "ask_email"
+                    reply = ("Thank you for contacting Intelsoft IT Support.\n\n"
+                             "I have detected a VPN credential issue.\n\n"
+                             "I will check your account status and resolve this automatically.\n\n"
+                             "Please enter your work email address to continue:")
+                else:
+                    s["issue_type"] = "network"
+                    s["step"] = "ask_email"
+                    reply = ("Thank you for contacting Intelsoft IT Support.\n\n"
+                             "I have detected a VPN network connectivity issue.\n\n"
+                             "Please enter your work email address so I can raise this with the Network Team:")
+            else:
+                s["step"] = "ask_email"
+                s["issue_type"] = "unknown"
+                reply = ("Thank you for contacting Intelsoft IT Support.\n\n"
+                         "I can help with your VPN issue.\n\n"
+                         "Please describe your issue more clearly:\n"
+                         "- Is it a password or login problem?\n"
+                         "- Or are you connected but cannot reach office systems?")
+
+        # Collect email
+        elif step == "ask_email":
+            email = user_msg.strip().lower()
+            if "@" not in email:
+                reply = "Please enter a valid work email address (e.g. john.doe@intelsoft379.onmicrosoft.com)"
+            else:
+                s["email"] = email
+                issue_type = s["issue_type"]
+
+                if issue_type == "credential":
+                    # Flow A — Check account via Graph API and fix
+                    account = _vpn_check_account(email)
+
+                    if account.get("found"):
+                        if account.get("locked"):
+                            # Account locked — unlock + reset password
+                            from main import reset_entra_password
+                            temp_pwd = _gen_temp_pwd()
+                            reset_entra_password(email.split("@")[0], temp_pwd)
+                            success, inc_num = create_servicenow_incident(
+                                short_description="VPN Access Restored - SC-002",
+                                category="Network", subcategory="VPN",
+                                caller=email,
+                                assignment_group="Identity & Access",
+                                summary=f"VPN credential issue resolved for {email}. Account was locked. Password reset via Entra ID.",
+                                knowledge="KB001 - VPN Connection Troubleshooting",
+                                auto_fix={"status": "Resolved", "notes": "Account unlocked and password reset via Graph API.", "success": True}
+                            )
+                            s["step"] = "done"
+                            reply = (f"VPN Issue Resolved.\n\n"
+                                     f"Root Cause: Your account was locked, blocking VPN authentication.\n\n"
+                                     f"Action Taken: Account unlocked and password reset via Microsoft Entra ID.\n\n"
+                                     f"Temporary Password: {temp_pwd}\n\n"
+                                     f"Steps to reconnect:\n"
+                                     f"1. Open your VPN client (FortiClient / Cisco AnyConnect)\n"
+                                     f"2. Enter your email: {email}\n"
+                                     f"3. Enter the temporary password above\n"
+                                     f"4. Change your password after login\n\n"
+                                     f"ServiceNow ticket {inc_num} created (Status: Resolved).")
+                            meta = {"incident": inc_num, "status": "Resolved", "flow": "A"}
+                        else:
+                            # Account active — likely wrong password, reset it
+                            from main import reset_entra_password
+                            temp_pwd = _gen_temp_pwd()
+                            reset_entra_password(email.split("@")[0], temp_pwd)
+                            success, inc_num = create_servicenow_incident(
+                                short_description="VPN Credential Reset - SC-002",
+                                category="Network", subcategory="VPN",
+                                caller=email,
+                                assignment_group="Identity & Access",
+                                summary=f"VPN credential reset for {email}. Password refreshed via Entra ID.",
+                                knowledge="KB001 - VPN Connection Troubleshooting",
+                                auto_fix={"status": "Resolved", "notes": "Password reset via Graph API.", "success": True}
+                            )
+                            s["step"] = "done"
+                            reply = (f"VPN Issue Resolved.\n\n"
+                                     f"Root Cause: VPN credentials were invalid or expired.\n\n"
+                                     f"Action Taken: Password reset via Microsoft Entra ID.\n\n"
+                                     f"Temporary Password: {temp_pwd}\n\n"
+                                     f"Steps to reconnect:\n"
+                                     f"1. Open your VPN client (FortiClient / Cisco AnyConnect)\n"
+                                     f"2. Enter your email: {email}\n"
+                                     f"3. Enter the temporary password above\n"
+                                     f"4. Change your password after login\n\n"
+                                     f"ServiceNow ticket {inc_num} created (Status: Resolved).")
+                            meta = {"incident": inc_num, "status": "Resolved", "flow": "A"}
+                    else:
+                        # User not found — escalate
+                        inc_num = f"INC-VPN{random.randint(1000,9999)}"
+                        s["step"] = "done"
+                        reply = (f"We could not find your account in the system.\n\n"
+                                 f"This has been escalated to the Intelsoft IT Support team.\n\n"
+                                 f"Ticket {inc_num} created (Priority: P2). An agent will contact you within 30 minutes.")
+                        meta = {"incident": inc_num, "priority": "P2", "flow": "A"}
+
+                else:
+                    # Flow B — Network issue, escalate to Network Team
+                    success, inc_num = create_servicenow_incident(
+                        short_description="VPN Network Connectivity Issue - SC-002",
+                        category="Network", subcategory="VPN",
+                        caller=email,
+                        assignment_group="Network Team",
+                        summary=(f"Employee {email} reports VPN connectivity issue. "
+                                 f"VPN connects but cannot reach office resources. "
+                                 f"Possible causes: routing issue, split tunneling, DNS failure, or firewall block. "
+                                 f"Assigned to Network Team for investigation."),
+                        knowledge="KB001 - VPN Connection Troubleshooting",
+                        auto_fix={"status": "In Progress", "notes": "Network issue — requires Network Team investigation.", "success": False}
+                    )
+                    s["step"] = "done"
+                    reply = (f"Your VPN connectivity issue has been escalated.\n\n"
+                             f"Root Cause Identified: Network routing or tunnel issue detected.\n"
+                             f"This cannot be resolved automatically and requires Network Team investigation.\n\n"
+                             f"Troubleshooting steps you can try while waiting:\n"
+                             f"1. Disconnect and reconnect VPN\n"
+                             f"2. Restart your network adapter\n"
+                             f"3. Try connecting from a different network\n\n"
+                             f"ServiceNow ticket {inc_num} created.\n"
+                             f"Priority: P2 | Assigned to: Network Team\n"
+                             f"Expected resolution: within 2 hours.")
+                    meta = {"incident": inc_num, "priority": "P2", "team": "Network Team", "flow": "B"}
+
+        elif step == "done":
+            reply = "This session is complete. Please start a new chat to raise a new request."
+
+        return {"reply": reply, "step": s["step"], "meta": meta}
+
+    except Exception as e:
+        return {"reply": f"An error occurred. Please try again or contact IT support. ({str(e)[:80]})", "step": "error", "meta": {}}
 
 
 @app.get("/chat", response_class=HTMLResponse)

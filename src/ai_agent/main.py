@@ -539,10 +539,16 @@ def generate_aria_response(description, scenario_id=None):
 
 def create_servicenow_incident(short_description, category, subcategory, caller, assignment_group, summary, knowledge, auto_fix):
     """Create an incident in ServiceNow with RAG and Automation context"""
+    import random, string
     try:
         url = f"{SERVICENOW_URL}/api/now/table/{TABLE_NAME}"
-        
+
+        # Generate ARIA incident number
+        aria_number = "ARIA" + ''.join(random.choices(string.digits, k=7))
+
         payload = {
+            "number": aria_number,
+            "incident_number": aria_number,
             "short_description": short_description,
             "category": category,
             "subcategory": subcategory,
